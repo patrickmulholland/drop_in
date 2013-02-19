@@ -1,0 +1,49 @@
+
+<% provide(:title, "Sign in") %>
+
+
+<% content_for :no_container do %>
+
+
+
+
+<div class ="form_container">
+
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+<div class="left_signup">
+	<%= f.label :email %>
+	<%= f.label :password %>
+    
+	
+</div>
+
+<div class="right_signup">
+	<%= f.email_field :email, :autofocus => true %><br>
+	<%= f.password_field :password %><br>
+</div>
+
+
+<div class="footer">
+<div class="f_left"><div class="small">
+	
+    <% if devise_mapping.rememberable? -%>
+    <%= f.check_box :remember_me %>&nbsp;Remember me&nbsp;&nbsp;&nbsp;
+    <% end -%>
+	
+	<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+	  <%= link_to "Forgot password?", new_password_path(resource_name) %><br />
+	<% end -%>
+	
+</div>
+</div>
+<div class="f_right"><div class="actions"><%= f.submit "Sign in" %></div></div>
+
+</div>
+
+</div>
+
+<% end %>
+
+<% end %>

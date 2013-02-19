@@ -1,0 +1,35 @@
+<%= form_for(@reply) do |f| %>
+  <% if @reply.errors.any? %>
+  	
+	
+	<div class="form_error_container">
+      <p><b><%= pluralize(@reply.errors.count, "error") %> prohibited this reply from being saved:</p></b>
+
+      <p><% @reply.errors.full_messages.each do |msg| %>
+        <%= msg %></br>
+      <% end %></p>
+    </div>
+  <% end %>
+  
+  
+  
+  
+  <div class="form_container">
+
+	  <div class="default">
+
+    <%= f.hidden_field :event_id %>
+    <%= f.hidden_field :user_id %>
+
+    <%= f.label "Your Reply:" %><br />
+    <%= f.text_area :message, :size => "10x11" %>
+
+    <%= f.hidden_field :approved %>
+
+	<div class="default_submit">
+		<div class="actions">
+    <%= f.submit %></div>
+</div>
+		</div>
+	</div>
+<% end %>

@@ -1,0 +1,50 @@
+<% provide(:title, 'Sign up') %>
+
+<% content_for :no_container do %>
+
+<div class ="form_container">
+
+
+
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+  
+  
+<div class="left_signup">
+	<%= f.label :name %>
+	<%= f.label :email %>
+	
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+	
+	<%= f.label :password %></br>
+	<%= f.label :password_confirmation %>
+	<%= f.label :current_password %>
+</div>
+
+<div class="right_signup">
+	<%= f.text_field :name, :autofocus => true %>
+	<%= f.email_field :email %>
+	<%= f.password_field :password, :autocomplete => "off" %><i>(leave blank if you don't want to change it)</i>
+	<%= f.password_field :password_confirmation %>
+	<%= f.password_field :current_password %><i>(we need your current password to confirm your changes)</i>
+</div>
+
+
+<div class="footer">
+<div class="f_left"><div class="small"><%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure you want to cancel your Account?" }, :method => :delete %></div></div>
+
+<div class="f_right"><div class="actions"><%= f.submit "Update" %></div></div>
+</div>
+
+
+<% end %>
+
+
+
+
+</div >
+
+<% end %>

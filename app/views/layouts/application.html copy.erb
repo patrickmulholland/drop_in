@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" %>
+
+
+
+  <%= javascript_include_tag "application" %>
+
+
+
+
+
+
+  <%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+</head>
+<body>
+	
+	
+	
+	<div id="header">
+		<div id="header_container">
+	
+		<div id="logo"></div>
+	
+	<div id="left_menu">
+	<%= link_to "Newest Events", root_path %>
+	| <%= link_to "Events by Date", by_date_path %>
+	</div> <!-- end left menu -->
+	
+	<div id="right_menu">
+	<% if user_signed_in? %>
+	
+	
+	<!-- Verschieben in anderen Part 
+		<%# link_to "Your Events", events_path %>
+		<%# link_to "Your Replies", replies_path %>
+
+		<%# link_to "Your Profile", current_user %>
+		-->
+		
+		
+		<%= link_to "Sign out", signout_path, method: "delete" %>
+	<% else %>
+		<%= link_to "Sign in", signin_path %>
+	<% end %>
+	<!-- #############Ende################## -->
+	</div> <!-- end right_menu -->
+</div><!-- end header_container -->
+	</div> <!-- end header -->
+	
+	<!-- ><div id="info_field"></div> -->
+	
+	
+	<div id="wrapper">
+	
+	
+	
+	
+	<div id="content">
+	
+	
+	<div id="left"><%= render "shared/user_overview"%>
+	</div><!-- end left -->
+	<div id="vertical_spacer">&nbsp;</div><!-- end vertical spacer -->
+	
+	<div id="right">
+		
+		<% flash.each do |key, value| %>
+		<div class="message"><%= key %>: <%= value %></div>
+		<% end %>
+		
+		<% if content_for?(:allposts) %>
+			<%= yield(:allposts) %>
+		<% else %>
+			<div class="general_container"><%= yield %></div>
+		<% end %>
+	
+	</div><!-- end right -->
+	
+</div><!-- end content -->
+
+</div> <!-- end wrapper -->
+<div id="footer"><div id="footer_container"><div id="footer_left">&copy; 2013 - ennui.com</div><div id="footer_right">Impring | About us | Contact</div></div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

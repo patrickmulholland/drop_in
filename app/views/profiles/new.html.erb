@@ -1,0 +1,19 @@
+<% if current_user.profile %>
+
+
+	<% content_for :no_container do %>
+
+	<div class="head_container"><p>You already have a profile.</p></div>
+
+	<% end %>
+
+
+
+<% else %>
+
+	<%= render "form" %>
+
+<% end %>
+
+
+

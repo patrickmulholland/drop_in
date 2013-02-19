@@ -1,0 +1,170 @@
+<% content_for :no_container do %>
+
+
+
+
+<% provide(:title, @user.name) %>
+
+
+<div class="general_container">
+	<div class="profile_content">
+		
+		
+		<div class="left">
+			
+			<% if @user.profile %>
+			<%= image_tag @user.profile.avatar.url(:big) %>
+			<% else %>
+			<%= image_tag "/avatars/big/missing.png" %>
+			<% end %>
+			
+		</div>
+			
+		<div class="right">
+			
+			
+			
+			<table>
+				
+				<tr>
+					<td ><b>Name:</b></td>
+					<td><%= @user.name %></td>
+				</tr>
+				
+				<% if @user.profile %>
+				
+				<% unless @user.profile.birthday.blank? %>
+				<tr>
+					<td><b>Birthday:</b></td>
+					<td><%= @user.profile.birthday %></td>
+				</tr>
+				<% else %>
+				<tr>
+					<td>test</td>
+					<td>test</td>
+				</tr>
+				<% end %>
+				
+				<% unless @user.profile.hometown.blank? %>
+				<tr>
+					<td><b>Hometown:</b></td>
+					<td><%= @user.profile.hometown %></td>
+				</tr>
+				<% end %>
+				
+				<% unless @user.profile.profession.blank? %>
+				<tr>
+					<td><b>Profession:</b></td>
+					<td><%= @user.profile.profession %></td>
+				</tr>
+				<% end %>
+
+				<% unless @user.profile.hobbies.blank? %>				
+				<tr>
+					<td><b>Hobbies:</b></td>
+					<td><%= @user.profile.hobbies %></td>
+				</tr>
+				<% end %>
+				<% end %>
+				
+				
+			</table>
+			
+			
+			<% if @user.profile %>
+			
+				<% if @user.profile.about_you.blank? %>
+					<p>No profile Details available</p>
+				<% else %>
+					<p><b>Description:</b><br><%= @user.profile.about_you %></p>
+				<% end %>
+			<% else %>
+				<p>No profile Details available</p>	
+			<% end %>
+			
+			
+			<% if current_user?(@user) && @user.profile %>
+	
+				<p>
+					
+					<%= link_to "Edit your profile", edit_profile_path(@user.profile), :class => "button"%><%= link_to "Edit your Login", edit_user_registration_path, :class => "button" %>
+					
+					</p>
+					
+				
+					<% elsif current_user?(@user) %>
+			
+			
+					<p>
+					<%= link_to "Create your profile", new_profile_path(@user), :class => "button" %><%= link_to "Edit your Login", edit_user_registration_path, :class => "button" %>
+					
+					</p>
+					
+	
+	
+			<% end %>
+
+			
+			
+			
+		</div>
+	
+	</div>
+	
+	<div class="rating">
+		<div class="left"><p>Ratings:</p></div>
+		<div class="right"><p><b class="cool"><%= Rating.where(:user_id => @user, :result => "cool").count %></b><b class="ok"><%= Rating.where(:user_id => @user, :result => "ok").count %></b><b class="gay"><%= Rating.where(:user_id => @user, :result => "gay").count %></b></p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<% if !@user.ratings.empty? %>
+	<% @user.ratings.limit(5).each do |rating| %>
+		<% if rating.comment != nil %>
+		<% @event = find_event_by_rating_event_id(rating.event_id) %>
+		
+		<div class="<%= cycle('replies_odd', 'replies_even') %>">
+			<div class="left"><%= link_to image_tag(@event.user.profile.avatar.url(:thumb)), @event.user %></div>
+			
+			
+			
+			
+			<div class="nocenter_right"><p><%= link_to @event.user.name, @event.user %> wrote:<br><%= rating.comment %></p></div>
+		</div>
+		
+		
+		
+		
+		
+		
+		<% end %>
+	
+	<% end %>
+	<% end %>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div>
+
+
+
+<!-- 
+<%# @user.events.count %><%# link_to "Show events", userevents_path(:user => @user) %>
+<%# @user.replies.count %>
+-->
+
+
+
+
+<% end %>

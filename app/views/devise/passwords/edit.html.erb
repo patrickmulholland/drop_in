@@ -1,0 +1,45 @@
+
+<% provide(:title, "Sign in") %>
+
+
+<% content_for :no_container do %>
+
+
+<div class ="form_container">
+
+
+
+
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+
+
+<div class="left_signup">
+	<%= f.label :password, "New password" %>
+	<%= f.label :password_confirmation, "Confirm new password" %>
+</div>
+
+<div class="right_signup">
+	<%= f.password_field :password, :autofocus => true %>
+	<%= f.password_field :password_confirmation %>
+</div>
+
+ 
+<div class="footer_center"><%= f.submit "Change my password" %></div>
+ 
+ 
+<% end %>
+
+
+
+
+
+</div>
+
+
+
+
+
+<% end %>

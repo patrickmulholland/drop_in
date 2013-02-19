@@ -1,0 +1,37 @@
+<%= form_for(@rating) do |f| %>
+  <% if @rating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this reply from being saved:</h2>
+
+      <ul>
+      <% @rating.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+  
+  
+  <div class="form_container">
+
+	  <div class="default">
+
+    <%= f.label "Your Comment:" %><br />
+    <%= f.text_area :comment, :size => "10x11" %>
+
+	<div class="default_submit">
+		<div class="actions">
+    <%= f.submit %></div>
+</div>
+		</div>
+	</div>
+  
+  
+  
+  
+  
+  
+  
+<% end %>

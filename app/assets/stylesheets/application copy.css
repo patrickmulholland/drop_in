@@ -1,0 +1,379 @@
+/*	Less Framework 4
+	http://lessframework.com
+	by Joni Korpi
+	License: http://opensource.org/licenses/mit-license.php	*/
+
+
+/*	Resets
+	------	*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup, 
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: 0;}
+
+
+
+/*	Typography presets
+	------------------	*/
+
+.gigantic {
+	font-size: 110px;
+	line-height: 120px;
+	letter-spacing: -2px;
+}
+
+.huge, h1 {
+	font-size: 68px;
+	letter-spacing: -1px;
+}
+
+.large, h2 {
+	font-size: 42px;
+	line-height: 48px;
+}
+
+.bigger, h3 {
+	font-size: 26px;
+	line-height: 36px;
+}
+
+.big, h4 {
+	display: inline;
+	padding: 3px 7px 3px 7px;
+	font-size: 14px;
+	background: red;
+	color: #FFF;
+	-moz-border-radius: 16px;
+	border-radius: 16px;
+
+}
+
+.small, small {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+
+
+/* Selection colours (easy to forget) */
+
+::selection 	 	{background: rgb(255,255,158);}
+::-moz-selection 	{background: rgb(255,255,158);}
+img::selection 		{background: transparent;}
+img::-moz-selection	{background: transparent;}
+body {-webkit-tap-highlight-color: rgb(255,255,158);}
+
+
+
+/*		Default Layout: 992px. 
+		Gutters: 24px.
+		Outer margins: 48px.
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+
+html, body {
+	font: 14px/24px Helvetica, Arial, "MS Trebuchet", sans-serif;
+	color: #555;
+	background: #EEE;
+	height: 100%;
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+
+
+
+body #header {
+	width: 100%;
+	height: 50px;
+	overflow: auto;
+
+
+	color: #FFF;
+	font-size: 14px;
+	
+	/* Gradient Background: */
+	background: #474747; /* Old browsers */
+	background: -moz-linear-gradient(top, #474747 0%, #010101 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(100%,#010101)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #474747 0%,#010101 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #474747 0%,#010101 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #474747 0%,#010101 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #474747 0%,#010101 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474747', endColorstr='#010101',GradientType=0 ); /* IE6-9 */
+	
+
+}
+
+body #header #header_container {
+	width: 85%;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+	overflow: auto;
+}
+
+
+body #header #header_container a, a:visited, a:hover {
+	color: #FFF;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+body #header #header_container #logo {
+	background:transparent url('/assets/logo.png') no-repeat left;
+	width: 13%;
+	height: 50px;
+	float: left;
+}
+
+body #header #header_container #left_menu{
+	width: 43.5%;
+	padding-top: 19px;
+	padding-bottom: 6px;
+	float: left;
+}
+
+body #header #header_container #right_menu{
+	width: 43.5%;
+	padding-top: 19px;
+	padding-bottom: 6px;
+
+	text-align: right;
+	float: right;
+}
+
+body #info_field {
+	width: 100%;
+	height: 50px;
+	background: green;
+
+}
+
+
+body #wrapper {
+	width: 85%;
+	margin-top: 30px;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+	height: auto !important;
+	height: 87%;
+	min-height: 87%;
+	background: red;
+}
+
+
+
+
+
+body #wrapper #content {
+	width: 100%;
+	overflow: auto;
+	background: green;
+	
+}
+
+body #wrapper .message {
+	background: #FFF;
+	width: 89%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	margin-bottom: 2.5%;
+	padding: 3%;
+	border:1px solid #CCC;
+	color: red;
+}
+
+body #wrapper a, a:visited, a:hover {
+	color: #000;
+}
+
+/* ############## General Container ############## */
+
+body #wrapper #content .general_container{
+
+	background: #FFF;
+	width: 93.5%;
+
+	margin-bottom: 2.5%;
+	padding: 3%;
+	border:1px solid #CCC;	
+	
+}
+
+body #wrapper #content .general_container h1{
+	display: block;
+	font-size: 14px;
+	color: #1BA5E0;
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 5px;
+}
+
+body #wrapper #content .general_container p{
+	margin-bottom: 5px;
+}
+
+body #wrapper #content .general_container img {
+	border: 1px solid #CCC;
+	display: inline;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+
+body #wrapper #content .general_container small{
+	display: block;
+	border-top: 1px solid #CCC;
+	padding-top: 5px;
+	font-size: 12px;
+}
+
+body #wrapper #content .general_container table{
+	
+}
+
+body #wrapper #content .top_container{
+
+	background: #FFF;
+	width: 96.5%;
+	margin-bottom: 2.5%;
+	padding: 4px 0 4px 3%;
+	border:1px solid #CCC;	
+	
+}
+
+/* -------------- End General Container --------------- */
+
+/* ############## Left Sidebar ############## */
+
+body #wrapper #content #left {
+	width: 25%;
+	float: left;
+}
+
+body #wrapper #content #left .general_container{
+	width: 85%;
+	padding: 7%;
+}
+
+body #wrapper #content #vertical_spacer {
+	width: 5%;
+	height: 10px;
+	float: left;
+	
+}
+
+/* -------------- End Left Sidebar --------------- */
+
+/* ############## Right Content ############## */
+
+body #wrapper #content #right {
+	width: 70%;
+	float: right;
+}
+
+body #wrapper #content #right p #notice{
+color: red;
+}
+
+
+/* -------------- End Right Content --------------- */
+
+body #footer {
+	font-size: 12px;
+	color: #AAA;
+    background: #242424;
+    width:100%;
+	overflow: auto;
+	height: auto !important;
+	height: 3.5%;
+	min-height: 3.5%;
+}
+body #footer #footer_container {
+	width: 85%;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+	
+}
+
+body #footer #footer_container #footer_left {
+	background: purple;
+	width: 50%;
+	float: left;
+}
+
+body #footer #footer_container #footer_right {
+	background: yellow;
+	text-align: right;
+	width: 50%;
+	float: right;
+}
+
+
+/*		Tablet Layout: 768px.
+		Gutters: 24px.
+		Outer margins: 28px.
+		Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+
+}
+
+
+
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+		Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+
+
+
+body #wrapper #content #left .general_container{
+	display: none;
+}
+
+body #wrapper #content #right {
+	width: 100%;
+}
+	
+}
+
+
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+
+	
+}

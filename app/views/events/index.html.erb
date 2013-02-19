@@ -1,0 +1,131 @@
+
+<% content_for :no_container do %>
+
+<% gate = false %>
+
+<% if @events.blank? %>
+
+
+<div class="how_to_container_replies">
+	
+	<p><b>You haven't created any Events yet.</b></p>
+	<p><%= link_to "Click here", new_event_path %> and quickly create one. Users
+		can reply on your event and you can decide if you want to invite them.</p>
+	<p>If you don't know what to do, <%= link_to "look here", by_date_path %> for inspiration and click on the reply button to take part at other users events.</p>
+	
+</div>
+
+
+
+
+<% else%>
+
+<div class="head_container"><p>Your events:</p><div class="head_right"><%= link_to 'Create New', new_event_path, :class => "button" %></div></div>
+        
+<% @events.order("date DESC").each do |event| %>    
+
+<% if event.date >= Date.today %> <!-- ___________ Neuere Events _____________ -->
+
+<div class="general_container">
+	
+	<div class="header">
+		
+		<div class="left"><p><%= event.date %></p></div>
+	
+	<div class="right"><p><% if count_new_replies_for_event(event) > 0%><b class="counter"><%= count_new_replies_for_event(event) %> new Replies</b><%end%><% if count_new_commits_for_event(event) > 0%><b class="counter"><%= count_new_commits_for_event(event) %> new Commits</b><% end %><% if count_new_replies_for_event(event) == 0 && count_new_commits_for_event(event) == 0%> &nbsp;<% end %></p></div></div>
+
+	<div class="content">
+		
+		<div class="general_test">
+	
+<%= event.short_description %>
+
+</div>
+
+</div>
+
+<div class="footer">
+	
+	<div class="left"><p><b class="replies"><%= event.replies.count %></b><b class="commits"><%= count_commits(event) %></b></p></div>
+
+
+<div class="right">
+
+<p><%= link_to 'Show', event, :class => 'button'%>
+	<%= link_to 'Edit', edit_event_path(event), :class => 'button' %>
+	<%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button' %>  </p>
+</div>
+</div>
+</div>
+   
+
+<% else %> <!-- __________________ Ältere Events __________________ -->
+
+<% if gate == false %>
+
+<div class="head_container"><p>Past events:</p></div>
+
+<% end %>
+
+
+<div class="general_container">
+	
+	<div class="header">
+		
+		<div class="left"><p><%= event.date %></p></div>
+	
+	<div class="right"><p><% if count_new_replies_for_event(event) > 0%><b class="counter"><%= count_new_replies_for_event(event) %> new Replies</b><%end%><% if count_new_commits_for_event(event) > 0%><b class="counter"><%= count_new_commits_for_event(event) %> new Commits</b><% end %><% if count_new_replies_for_event(event) == 0 && count_new_commits_for_event(event) == 0%> &nbsp;<% end %></p></div></div>
+
+	<div class="content">
+		
+		<div class="general_test">
+	
+<%= event.short_description %>
+
+</div>
+
+</div>
+
+<div class="footer">
+	
+	<div class="left"><p><b class="replies"><%= event.replies.count %></b><b class="commits"><%= count_commits(event) %></b></p></div>
+
+
+<div class="right">
+
+<p>
+	
+	<% if event.ratings.count != event.replies.where(:commit => true).count %>
+		
+		<%= link_to "Rate Users", rate_users_path(:id => event), :class => "button" %>
+			
+		<% elsif event.ratings.where(:comment => nil).count > 0 %>
+			
+		<%= link_to "Comment Users", rate_users_path(:id => event), :class => "button" %>
+			
+			
+	<% end %>
+	
+</p>
+
+
+</div>
+</div>
+</div>
+
+<% gate = true %>
+
+
+<% end %>
+
+
+
+
+
+
+<% end %>
+
+
+
+<% end %>
+<% end %>

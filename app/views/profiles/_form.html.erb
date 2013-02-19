@@ -1,0 +1,95 @@
+<% content_for :no_container do %>
+
+
+<%= form_for @profile, :html => { :multipart => true } do |f| %>
+
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this reply from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+<div class="general_container">
+  	<div class="profile_content">
+		
+		
+  		<div class="left">
+			
+  			<%= image_tag @profile.avatar.url(:big) %>
+  			
+  		</div>
+			
+  		<div class="right">
+  			
+			<table>
+			    <%= f.hidden_field :user_id %>
+				
+				
+				
+				<tr>
+					<td ><%= f.label "Gender:" %></td>
+					<td><%= f.select :gender, [["Male", "Male"], ["Female", "Female"]], :selected => "Male" %></td>
+				</tr>
+				<tr>
+					<td ><%= f.label "Birthday:" %></td>
+					<td><%= f.date_select :birthday, :start_year => 1960, :end_year => Time.now.year, :use_month_numbers => true %></td>
+				</tr>
+				<tr>
+					<td ><%= f.label "Hometown:" %></td>
+					<td><%= f.text_field :hometown %></td>
+				</tr>
+				<tr>
+					<td ><%= f.label "Profession:" %></td>
+					<td><%= f.text_field :profession %></td>
+				</tr>
+				<tr>
+					<td ><%= f.label "Hobbies:" %></td>
+					<td><%= f.text_field :hobbies %></td>
+				</tr>
+				
+				
+			</table>
+			
+			<div class="upload_label">
+				Profile Picture:
+			</div>
+			<div class="upload">
+		  	<%= f.file_field :avatar %>
+			</div>
+			
+			
+			
+		    <div class="description">
+				<div class="description_label">About you:</div>
+		      <%= f.text_area :about_you, :size => "10x11" %>
+  		    
+			<div class="actions">
+  		      <%= f.submit %>
+  		    </div>
+		    
+			</div>
+			
+		    
+			
+  		</div><!-- end right -->
+		
+	</div>
+		
+		
+	
+		
+	</div>
+</div>
+
+
+<% end %>
+
+
+<% end %>

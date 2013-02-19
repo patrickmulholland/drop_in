@@ -1,0 +1,1380 @@
+/*	Less Framework 4
+	http://lessframework.com
+	by Joni Korpi
+	License: http://opensource.org/licenses/mit-license.php	*/
+
+
+/*	Resets
+	------	*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup, 
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: 0;}
+
+
+
+/*	Typography presets
+	------------------	*/
+
+.gigantic {
+	font-size: 110px;
+	line-height: 120px;
+	letter-spacing: -2px;
+}
+
+.huge, h1 {
+	font-size: 68px;
+	letter-spacing: -1px;
+}
+
+.large, h2 {
+	font-size: 42px;
+	line-height: 48px;
+}
+
+.bigger, h3 {
+	font-size: 26px;
+	line-height: 36px;
+}
+
+.big, h4 {
+	display: inline;
+	padding: 3px 7px 3px 7px;
+	font-size: 14px;
+	background: red;
+	color: #FFF;
+	-moz-border-radius: 16px;
+	border-radius: 16px;
+
+}
+
+.small, small {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+/* ------------- General Styles ---------------- */
+
+.counter{
+
+display: inline;
+padding: 3px 7px 3px 7px;
+font-size: 12px;
+background: #BD4040;
+
+color: #FFF;
+-moz-border-radius: 3px;
+border-radius: 3px;
+margin-left: 10px;
+font-weight: normal;
+line-height: 12px;
+}
+
+
+
+
+
+
+/* Selection colours (easy to forget) */
+
+::selection 	 	{background: rgb(255,255,158);}
+::-moz-selection 	{background: rgb(255,255,158);}
+img::selection 		{background: transparent;}
+img::-moz-selection	{background: transparent;}
+body {-webkit-tap-highlight-color: rgb(255,255,158);}
+
+
+
+/*		Default Layout: 992px. 
+		Gutters: 24px.
+		Outer margins: 48px.
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+
+html, body {
+	font: 14px/24px Helvetica, Arial, "MS Trebuchet", sans-serif;
+	color: #555;
+	background: #EEE;
+	height: 100%;
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+
+
+
+body #header {
+	width: 100%;
+	height: 42px;
+	overflow: auto;
+
+
+	color: #FFF;
+	font-size: 14px;
+	
+	/* Gradient Background: */
+	background: #474747; /* Old browsers */
+	background: -moz-linear-gradient(top, #474747 0%, #010101 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(100%,#010101)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #474747 0%,#010101 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #474747 0%,#010101 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #474747 0%,#010101 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #474747 0%,#010101 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474747', endColorstr='#010101',GradientType=0 ); /* IE6-9 */
+	
+
+}
+
+body #header #header_container {
+	width: 85%;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+}
+
+
+body #header #header_container a, a:visited, a:hover {
+	color: #FFF;
+	font-size: 13px;
+	text-decoration: none;
+}
+
+body #header #header_container #logo {
+	
+}
+
+body #header #header_container #logo a{
+width: 100px;
+height: 30px;
+margin-top: 6px;
+margin-left: 1%;
+float: left;
+}
+
+
+
+body #header #header_container #right_menu{
+	margin-top: 13px;
+	width: 33%;
+	text-align: right;
+	float: right;
+}
+
+body #info_field {
+	width: 100%;
+	height: 200px;
+	background: #000 url("/assets/info_field_2.jpg") no-repeat center;
+}
+
+body #profile_notification {
+	color: #FFF;
+	width: 100%;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background: #60819F;
+	text-align: center;
+	
+}
+
+body #profile_notification a, a:visited, a:hover{
+	color: #FFF;
+	text-decoration: underline;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+
+body #wrapper {
+	width: 85%;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+	/*
+	height: auto !important;
+	height: 100%;
+	min-height: 100%; */
+}
+
+
+
+body #wrapper #content {
+	
+	padding-top: 30px;
+	overflow: auto;
+	width: 100%;
+	padding-bottom: 45px;
+
+	
+}
+
+
+
+body #wrapper #content .informer{
+	font-size: 14px;
+	background: #FFF;
+	width: 99.5%;
+	margin-bottom: 25px;
+	border:1px solid #DDD;	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	text-align: center;
+	color: red;
+    box-shadow: 0px 5px 4px -4px #666;
+	
+}
+
+body #wrapper #content .informer p{
+	padding: 8px 0 8px 10px;
+	font-weight: bold;
+}
+
+
+body #wrapper #content .page_container{
+	background: #FFF;
+	width: 98%;
+	margin-bottom: 25px;
+	border:1px solid #DDD;	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+body #wrapper #content .page_container h1{
+	font-size: 14px;
+	padding: 4px 0 4px 8px;
+	border-bottom: solid 1px #DDD;
+}
+
+body #wrapper #content .page_container p{
+	padding: 10px;
+}
+
+
+body #wrapper #content .head_container{
+	font-size: 14px;
+	background: #FFF;
+	width: 99.5%;
+	margin-bottom: 25px;
+	border:1px solid #DDD;	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    box-shadow: 0px 5px 4px -4px #666;
+	overflow: auto;
+	
+}
+
+body #wrapper #content .head_container p{
+	width: 50%;
+	float: left;
+	padding: 11px 0 8px 10px;
+	font-weight: bold;
+}
+
+body #wrapper #content .head_container .head_right{
+	text-align: right;
+	margin-right: 9px;
+	width: 30%;
+	padding: 8px 0 8px 10px;
+	float: right;
+}
+
+body #wrapper #content .head_container .head_right a, a:visited, a:hover{
+	color: #FFF;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 12px;
+	
+}
+
+body #wrapper #content .head_container .head_right .button{
+	display: inline-block;
+	background: #60819F;
+	padding: 2px 10px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	
+}
+
+body #wrapper #content .overview_container{
+	font-size: 14px;
+	background: #FFF;
+	width: 99.5%;
+	margin-bottom: 25px;
+	border:1px solid #DDD;	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    box-shadow: 0px 5px 4px -4px #666;
+	
+}
+
+body #wrapper #content .overview_container p{
+	text-align: center;
+	padding: 8px 0 8px 10px;
+}
+
+body #wrapper #content .overview_container a{
+	text-decoration: none;
+	font-weight: normal;
+}
+
+
+
+
+body #wrapper #content label{
+	
+}
+
+body #wrapper #content textarea, input{
+	border: 1px solid #BBB;
+	padding: 4px;
+	color: #555;
+}
+
+
+body #wrapper #content .actions input{
+	background: #777;
+	color:white;
+	border: 0;
+	padding: 5px 20px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	
+}
+
+/* ############## Erklärungs Container ############## */
+
+
+body #wrapper #content .how_to_container_replies{
+	background: #FFF;
+	width: 93.5%;
+	padding: 15px 3% 0 3%;
+	border:1px solid #DDD;	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    box-shadow: 0px 5px 4px -4px #666;
+}
+
+body #wrapper #content .how_to_container_replies p{
+	padding-bottom: 15px;
+}
+
+/* ############## Error Container ############## */
+
+
+body #wrapper #content .form_error_container{
+	background: #FFF;
+	width: 93.5%;
+	padding: 15px 3% 0 3%;
+	border:1px solid #DDD;	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    box-shadow: 0px 5px 4px -4px #666;
+	color: red;
+	margin-bottom: 25px;
+}
+
+body #wrapper #content .form_error_container p{
+	padding-bottom: 15px;
+}
+
+
+/* ############## Form Container ############## */
+
+body #wrapper #content .form_container{
+	background: #FFF;
+	width: 99.5%;
+	margin-bottom: 25px;
+	padding-bottom: 15px;
+	border:1px solid #DDD;	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	overflow: auto;
+	
+    box-shadow: 0px 5px 4px -4px #666;
+	
+	
+}
+
+
+
+body #wrapper #content .form_container .spacer{
+	color: #888;
+	margin-top: 15px;
+	margin-left: 3%;
+	margin-right: 4%;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #CCC;
+}
+
+
+
+
+
+body #wrapper #content .form_container .left{
+	width: 60%;
+	float: left;
+}
+
+body #wrapper #content .form_container .left_signup{
+	margin: 15px 0 0 3%;
+	width: 28%;
+	float: left;
+}
+
+body #wrapper #content .form_container .left_signup input{
+	margin-right: 10px;
+}
+
+body #wrapper #content .form_container .left_signup label{
+	display: block;
+	padding-top: 3px;
+}
+
+body #wrapper #content .form_container .right_signup{
+	margin-top: 15px;
+	width: 67%;
+	float: left;
+}
+
+body #wrapper #content .form_container .right_signup input{
+	width: 95%;
+}
+
+body #wrapper #content .form_container .right_signup i{
+	font-size: 12px;
+}
+
+
+body #wrapper #content .form_container .right{
+	width: 40%;
+	float: left;
+}
+
+body #wrapper #content .form_container .footer{
+	clear: both;
+	width: 96.5%;
+	padding-top: 10px;
+}
+
+body #wrapper #content .form_container .footer_center{
+	clear: both;
+	width: 96.5%;
+	padding-top: 10px;
+	text-align: center;
+}
+
+body #wrapper #content .form_container .footer .f_left{
+	margin-left: 3%;
+	width: 57%;
+	float: left;
+}
+
+body #wrapper #content .form_container .footer .f_left .small{
+	margin-top: 7px;
+	font-size: 12px;
+}
+
+body #wrapper #content .form_container .footer .f_right{
+	text-align: right;
+	width: 40%;
+	float: left;
+}
+
+body #wrapper #content .form_container .bottom{
+	clear: both;
+}
+
+
+body #wrapper #content .form_container .default{
+	padding: 15px 3% 0 3%;
+}
+
+body #wrapper #content .form_container .default textarea{
+	width: 98%;
+}
+
+
+body #wrapper #content .form_container .default .default_submit{
+	width: 100%;
+	text-align: right;
+}
+
+
+body #wrapper #content .form_container .bottom .details {
+	padding-top: 5px;
+	margin-left: 3%;
+}
+
+body #wrapper #content .form_container .bottom .details textarea{
+	width: 94.4%;
+}
+
+body #wrapper #content .form_container .bottom .submit {
+	padding-top: 5px;
+	margin-left: 3%;
+	margin-right: 3%;
+	text-align: right;
+}
+
+body #wrapper #content .form_container .bottom .submit input{
+	background: #777;
+	color:white;
+	border: 0;
+	padding: 5px 20px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	
+}
+
+body #wrapper #content .form_container .left .textarea {
+	margin-top: 15px;
+	margin-left: 5%;
+
+}
+
+body #wrapper #content .form_container .left .textarea textarea{
+	width: 92%;
+}
+
+
+body #wrapper #content .form_container .left .street{
+	margin-top: 15px;
+	margin-left: 5%;
+
+}
+body #wrapper #content .form_container .left .street input{
+	width: 92%;
+
+}
+
+body #wrapper #content .form_container .right .input {
+	margin-top: 15px;
+	margin-right: 8%;
+	padding-bottom:3px;
+
+}
+body #wrapper #content .form_container .right .input input{
+	width: 94%;
+}
+
+
+/* ############## General Container ############## */
+
+body #wrapper #content .general_container{
+	background: #FFF;
+	width: 99.5%;
+	margin-bottom: 25px;
+	border:1px solid #DDD;	
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    box-shadow: 0px 5px 4px -4px #666;
+	
+}
+
+body #wrapper #content .general_container .do_sign_up{
+	margin: 15px;
+}
+
+body #wrapper #content .general_container .do_sign_up a{
+	color: #555;
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: underline;
+	
+}
+
+
+
+body #wrapper #content .general_container a{
+	text-decoration: none;
+	font-weight: normal;
+	color: #FFF;
+	line-height: 16px;
+	font-size: 12px;
+	
+	
+}
+
+body #wrapper #content .general_container .button{
+	display: inline-block;
+	background: #777;
+	padding: 3px 20px;
+	margin-right: 5px;	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	
+}
+
+body #wrapper #content .general_container .header{
+	width: 100%;
+	
+}
+
+body #wrapper #content .general_container .header p{
+	padding: 4px 0 4px 8px;
+	border-bottom: solid 1px #DDD;
+}
+
+body #wrapper #content .general_container .header_noborder{
+	width: 100%;
+	
+}
+
+body #wrapper #content .general_container .header_noborder p{
+	padding: 4px 0 4px 8px;
+}
+
+
+body #wrapper #content .general_container .header a, a:visited, a:hover{
+	font-weight: bold;
+	color: #07A6E0;
+}
+
+body #wrapper #content .general_container .header .left{
+	width: 50%;
+	float: left;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+body #wrapper #content .general_container .header .left p{
+	padding: 4px 0 4px 8px;
+	border-bottom: 1px solid #CCC;
+	
+}
+
+body #wrapper #content .general_container .header .right{
+	width: 50%;
+	float: left;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+body #wrapper #content .general_container .header .right p{
+	padding: 4px 8px 4px 0;
+	border-bottom: 1px solid #CCC;
+	text-align: right;
+	
+	
+}
+
+/* Profile Container */
+
+body #wrapper #content .general_container .profile_content{
+	width: 100%;
+	overflow: auto;
+	
+}
+
+body #wrapper #content .general_container .profile_content .left{
+	width: 30%;
+	max-width: 150px;
+	float: left;
+	padding-top: 20px;
+	padding-left: 3.5%;
+	padding-right: 7%;
+	
+	
+}
+
+body #wrapper #content .general_container .profile_content .left img{
+	display: block;
+	padding: 3px;
+	background: #FFF;
+	border: 1px solid #CCC;
+	max-width: 100%;
+	margin-bottom: 20px;
+
+}
+
+
+
+body #wrapper #content .general_container .profile_content .right{
+	background: p;
+	padding-right: 3%;
+	width: 56%;
+	float: left;
+}
+
+body #wrapper #content .general_container .profile_content .right table{
+	width: 100%;
+	table-layout: fixed;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+body #wrapper #content .general_container .profile_content .right table tr td{
+	vertical-align: top;
+}
+
+body #wrapper #content .general_container .profile_content .right table tr td input{
+	width: 95%
+}
+
+body #wrapper #content .general_container .profile_content .right p{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 1px solid #CCC;
+	width: 100%;
+}
+
+body #wrapper #content .general_container .profile_content .right .upload_label{
+	border-top: 1px solid #CCC;
+	padding-top: 10px;
+	text-align: center;
+	width: 100%;
+}
+
+body #wrapper #content .general_container .profile_content .right .upload{
+	text-align: center;
+	width: 100%;
+	padding-bottom: 10px;
+}
+
+
+body #wrapper #content .general_container .profile_content .right .upload input{
+	border: 0;
+}
+
+body #wrapper #content .general_container .profile_content .right .description{
+	text-align: center;
+	width: 100%;
+	padding-bottom: 15px;
+}
+
+body #wrapper #content .general_container .profile_content .right .description .description_label{
+	border-top: 1px solid #CCC;
+	padding-top: 10px;
+	text-align: center;
+	padding-bottom: 10px ;
+}
+
+body #wrapper #content .general_container .profile_content .right .description textarea{
+	width: 97%;
+}
+
+/* ----- Profile Rating Container -------*/
+
+body #wrapper #content .general_container .rating{
+	width: 100%;
+	overflow: auto;
+	background: #EEE;
+}
+
+body #wrapper #content .general_container .rating .left{
+	width: 50%;
+	float: left;
+	
+}
+
+body #wrapper #content .general_container .rating .left p{
+	font-weight: bold;
+	padding: 4px 0 4px 8px;
+	border-top: 1px solid #CCC;
+}
+
+body #wrapper #content .general_container .rating .right{
+	width: 50%;
+	float: left;
+	text-align: right;
+}
+
+body #wrapper #content .general_container .rating .right p{
+	padding: 4px 0 4px 8px;
+	border-top: 1px solid #CCC;
+}
+
+body #wrapper #content .general_container .rating .right p b.cool{
+	background: url("/assets/cool.png") left center no-repeat;
+	padding-left: 22px;
+	margin-right: 15px;
+	
+}
+
+body #wrapper #content .general_container .rating .right p b.ok{
+	background: url("/assets/ok.png") left center no-repeat;
+	padding-left: 22px;
+	margin-right: 15px;
+	
+}
+
+body #wrapper #content .general_container .rating .right p b.gay{
+	background: url("/assets/gay.png") left center no-repeat;
+	padding-left: 22px;
+	margin-right: 15px;
+}
+
+
+
+
+
+body #wrapper #content .general_container .static_content{
+	width: 100%;
+	overflow: auto;
+	padding-bottom: 20px;
+	
+}
+
+
+body #wrapper #content .general_container .static_content .google img{
+	min-width: 100%;
+	max-width: 100%;
+	border-bottom: 1px solid #CCC;
+
+    
+}
+
+
+body #wrapper #content .general_container .static_content .left{
+	width: 50%;
+	margin-left: 4%;
+	margin-top: 13px;
+	float: left;
+}
+
+body #wrapper #content .general_container .static_content .right{
+	margin-top: 13px;
+	margin-right: 4%;
+	padding-left: 3%;
+	width: 36%;
+	float: right;
+	border-left: 1px solid #CCC;
+}
+
+
+body #wrapper #content .general_container .replies_even {
+	width: 100%;
+	overflow: auto;
+	line-height: 20px;
+	border-top: 1px solid #CCC;
+	background: #EEE;
+	
+}
+
+body #wrapper #content .general_container .replies_even a{
+	color: #000;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+body #wrapper #content .general_container .replies_even .left{
+	float: left;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	
+}
+
+body #wrapper #content .general_container .replies_even .left img{
+	display: block;
+	margin: 0 12px 0 8px;
+	padding: 3px;
+	background: #FFF;
+	border: 1px solid #CCC;
+	
+}
+
+body #wrapper #content .general_container .replies_even .nocenter_right{
+	width: 77%;
+	float: left;
+    height: 64px;
+	display: table;
+}
+
+body #wrapper #content .general_container .replies_even .nocenter_right p{
+	display:table-cell;
+	vertical-align:middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+body #wrapper #content .general_container .replies_even .center{
+	width: 50%;
+	float: left;
+    height: 64px;
+	display: table;
+}
+
+
+body #wrapper #content .general_container .replies_even .center p{
+	display:table-cell;
+	vertical-align:middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+
+body #wrapper #content .general_container .replies_even .center_rating{
+	width: 78%;
+	float: left;
+    height: 64px;
+	display: table;
+}
+
+body #wrapper #content .general_container .replies_even .center_rating a{
+	color: #FFF;
+}
+
+body #wrapper #content .general_container .replies_even .center_rating p{
+	display:table-cell;
+	vertical-align:middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+
+
+body #wrapper #content .general_container .replies_even .right{
+	text-align: right;
+	margin-top: 16px;
+	margin-right: 12px;
+	width: 20%;
+	float: right;
+}
+
+body #wrapper #content .general_container .replies_even .right a{
+	color: #FFF;
+}
+
+body #wrapper #content .general_container .replies_odd {
+	width: 100%;
+	overflow: auto;
+	line-height: 20px;
+	border-top: 1px solid #CCC;
+	
+	
+}
+
+body #wrapper #content .general_container .replies_odd a{
+	color: #000;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+body #wrapper #content .general_container .replies_odd .left{
+	float: left;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	
+}
+
+body #wrapper #content .general_container .replies_odd .left img{
+	display: block;
+	margin: 0 12px 0 8px;
+	padding: 3px;
+	background: #FFF;
+	border: 1px solid #CCC;
+	
+}
+
+body #wrapper #content .general_container .replies_odd .nocenter_right{
+	width: 77%;
+	float: left;
+    height: 64px;
+	display: table;
+}
+
+body #wrapper #content .general_container .replies_odd .nocenter_right p{
+	display:table-cell;
+	vertical-align:middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+body #wrapper #content .general_container .replies_odd .center{
+	width: 50%;
+	float: left;
+    height: 64px;
+	display: table;
+}
+
+body #wrapper #content .general_container .replies_odd .center p{
+	display:table-cell;
+	vertical-align:middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+
+
+body #wrapper #content .general_container .replies_odd .right{
+
+	text-align: right;
+	margin-top: 16px;
+	margin-right: 12px;
+	width: 20%;
+	float: right;
+	
+}
+
+
+body #wrapper #content .general_container .replies_odd .right a{
+	color: #FFF;
+}
+
+
+body #wrapper #content .general_container .menu_header{
+	width: 100%;
+	
+}
+
+body #wrapper #content .general_container .menu_header p{
+	padding: 4px 0 4px 8px;
+	border-bottom: solid 1px #DDD;
+}
+
+
+body #wrapper #content .general_container .menu_content{
+	width: 100%;
+	overflow: auto;
+	padding-top: 8px;
+}
+
+body #wrapper #content .general_container .menu_content img{
+	display: block;
+	margin: 0 12px 0 8px;
+	padding: 3px;
+	background: #FFF;
+	border: 1px solid #CCC;
+}
+
+body #wrapper #content .general_container .menu_content .menu{
+	margin-top: 8px;
+}
+
+body #wrapper #content .general_container .menu_content .menu .item{
+	width: 100%;
+	background: #EEE;
+	border-top: 1px solid #CCC;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	line-height: 22px;
+}
+
+body #wrapper #content .general_container .menu_content .menu .item a{
+	color: #555;
+	font-size: 12px;
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+	padding-left: 10px;
+	background: url("/assets/arrow.png") right center no-repeat;
+}
+
+
+
+
+body #wrapper #content .general_container .menu_content .menu .item_odd{
+	width: 100%;
+	background: #FFF;
+	border-top: 1px solid #CCC;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	line-height: 22px;
+}
+
+body #wrapper #content .general_container .menu_content .menu .item_odd a{
+	color: #555;
+	font-size: 12px;
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+	padding-left: 10px;
+	background: url("/assets/arrow.png") right center no-repeat;
+}
+body #wrapper #content .general_container .menu_content .menu .item_odd .counter{
+
+display: inline;
+padding: 3px 7px 3px 7px;
+font-size: 12px;
+background: #BD4040;
+
+color: #FFF;
+-moz-border-radius: 3px;
+border-radius: 3px;
+margin-left: 10px;
+}
+
+
+
+body #wrapper #content .general_container .content .general_test{
+	float: left;
+	padding: 8px;
+}
+
+body #wrapper #content .general_container .content .left{
+	float: left;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	
+}
+
+body #wrapper #content .general_container .content .left img{
+	display: block;
+	margin: 0 12px 0 8px;
+	padding: 3px;
+	background: #FFF;
+	border: 1px solid #CCC;
+}
+
+body #wrapper #content .general_container .content .right{
+	float: left;
+	width: 78%;
+    height: 64px;
+	display: table;
+	
+	
+}
+
+body #wrapper #content .general_container .content .right p{
+	display:table-cell;
+	vertical-align:middle;
+	
+	
+}
+
+body #wrapper #content .general_container .footer{
+	width: 100%;
+	overflow: auto;
+	background: #F4F4F4;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	
+}
+
+body #wrapper #content .general_container .footer .center{
+	text-align: center;
+}
+
+
+body #wrapper #content .general_container .footer .center p{
+	padding: 4px 0 4px 8px;
+	border-top: 1px solid #CCC;
+}
+
+
+body #wrapper #content .general_container .footer .left{
+	width: 42%;
+	float: left;
+}
+
+body #wrapper #content .general_container .footer .left p{
+	padding: 4px 0 4px 8px;
+	border-top: 1px solid #CCC;
+}
+
+body #wrapper #content .general_container .footer .left b.replies{
+	background: url("/assets/replies.png") left center no-repeat;
+	padding-left: 22px;
+}
+
+body #wrapper #content .general_container .footer .left b.commits{
+	margin-left: 20px;
+	background: url("/assets/commits.png") left center no-repeat;
+	padding-left: 23px;
+}
+
+body #wrapper #content .general_container .footer .right{
+	width: 58%;
+	float: left;
+}
+
+body #wrapper #content .general_container .footer .right p{
+	padding: 4px 0 4px 8px;
+	border-top: 1px solid #CCC;
+	text-align: right;
+}
+
+body #wrapper #content .general_container .footer .right p a{
+	display: inline-block;
+	background: #777;
+	padding: 3px 20px;
+	margin-right: 5px;
+	
+	font-size: 12px;
+	text-decoration: bold;
+	font-weight: normal;
+	color: #FFF;
+	line-height: 16px;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+
+
+
+/* -------------- End General Container --------------- */
+
+/* ############## Left Sidebar ############## */
+
+body #wrapper #content #left {
+	width: 25%;
+	float: left;
+}
+
+body #wrapper #content #vertical_spacer {
+	width: 5%;
+	float: left;
+}
+
+
+
+/* -------------- End Left Sidebar --------------- */
+
+/* ############## Right Content ############## */
+
+body #wrapper #content #right {
+	width: 70%;
+	float: right;
+}
+
+body #wrapper #content #right p #notice{
+color: red;
+}
+
+
+/* -------------- End Right Content --------------- */
+
+body #footer {	
+	position:fixed;
+	bottom:0px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #CCC;
+    background: #222;
+    width:100%;
+	overflow: auto;
+	height: 29px;
+}
+body #footer #footer_container {
+	width: 85%;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
+	
+}
+
+body #footer #footer_container #footer_left {
+	margin-top: 6px;
+	width: 50%;
+	float: left;
+}
+
+body #footer #footer_container #footer_right {
+	margin-top: 6px;
+	text-align: right;
+	width: 50%;
+	float: right;
+}
+
+
+/*		Tablet Layout: 768px.
+		Gutters: 24px.
+		Outer margins: 28px.
+		Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+
+}
+
+
+
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+		Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+
+
+body #wrapper #content #left {
+	width: 100%;
+	float: left;
+}
+
+body #wrapper #content #left .general_container .header {
+	border-bottom: 20px;
+	}
+
+body #wrapper #content #right {
+	width: 100%;
+	float: left;
+}
+
+body #wrapper #content #vertical_spacer {
+	display: none;
+}
+
+body #wrapper #content .general_container .menu_header p{
+	text-align: center;
+	border-bottom: none;
+}
+
+body #wrapper #content .general_container .menu_content{
+	padding: 0px;
+}
+
+body #wrapper #content .general_container .menu_content .menu{
+	margin: 0px;
+}
+
+body #wrapper #content .general_container .menu_content img{
+	display: none;
+}
+
+
+	
+}
+
+
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+
+	
+}

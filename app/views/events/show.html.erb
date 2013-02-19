@@ -1,0 +1,118 @@
+<% content_for :no_container do %>
+
+<div class="general_container">
+	<div class="header"><p><%= @event.date %></p></div>
+	
+	
+	<div class="static_content">
+
+		<div class="google">
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=800x180&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>  		
+</div>
+		<div class="left">
+			<p><b><%= @event.short_description %></b></p>
+		    <p><%= @event.details %></p>
+		</div>
+		
+		
+		
+		<div class="right">
+		    <%= @event.street %><br>
+		    <%= @event.city %><br>
+			<%= @event.meeting_point %><br><br>
+		
+			<%= @event.date %><br>
+		    <%= @event.time %>
+		</div>
+		
+	</div>
+	
+	<% if current_user.id == @event.user_id.to_i #show replies only if current user is owner of this event %>
+	
+	<% @event.replies.each do |reply| %>
+	
+	<div class="<%= cycle('replies_even', 'replies_odd') %>">
+		
+		<div class="left">
+		
+		<% if reply.user.profile %>
+		<%= link_to image_tag(reply.user.profile.avatar.url(:thumb)), reply.user %>
+		<% else %>
+		<%= image_tag "/avatars/thumb/missing.png"%>
+		<% end %></div>
+		
+		
+		<div class="center"><p><%= link_to reply.user.name, reply.user %>
+ 	wrote:<br><%= reply.message %></p></div>
+		<div class="right">
+			
+			<% if reply.approved == false %>
+
+			<%= link_to image_tag("/assets/invite_new.png", :title => "Invite this User to your Event"),
+				authorize_to_see_path(:id => reply.id) %>
+	
+			<% else %>
+		
+				
+		
+				<% if reply.commit == true %>
+
+				<%= image_tag "/assets/invite_commit.png", :title => "This User takes part at your Event" %>
+
+				<% else %>
+				
+				
+				<%= image_tag "/assets/invite_pending.png", :title => "Waiting for User to commit" %>
+				
+				
+				<% end %>
+		
+	
+			<% end %>
+			
+			
+		</div>
+	</div>
+	
+	<% end %>
+	
+	
+	<% end %>
+	
+	<% if current_user != @event.user && find_current_reply(@event).commit == false %>
+	
+	<div class="footer">
+		<div class="center"><p>
+	
+	 <%= link_to "I'll be there!", commit_path(:id => @event), :class => "button"%>
+	 
+ </div>
+	
+ </div>
+	 
+	<% elsif current_user != @event.user && find_current_reply(@event).commit == true %>
+	<div class="footer">
+		<div class="center"><p><%= link_to "Refuse commit", refuse_path(:id => @event), confirm: "You shure you can't come?", :class => "button"%>
+</div>
+	
+</div>
+	<% end %>
+
+	
+</div>
+
+
+
+
+
+
+
+
+<% end %>
+
+
+
+
+
+
+

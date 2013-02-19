@@ -1,0 +1,11 @@
+<% if object.errors.any? %>
+
+The form contains <%= object.errors.count %> Errors:<br>
+
+<% object.errors.full_messages.each do |msg| %>
+
+--------- <%= msg %> --------<br>
+
+<% end %><br>
+
+<% end %>

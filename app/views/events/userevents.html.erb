@@ -1,0 +1,11 @@
+<% @event.each do |event| %>
+
+<p><%= event.short_description %> - <%= time_ago_in_words(event.created_at)%> ago. <i>(<%= event.replies.count%> People replied.)</i></p>
+	
+<% end %>
+
+
+
+
+
+

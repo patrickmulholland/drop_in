@@ -1,0 +1,66 @@
+<% content_for :no_container do %>
+
+<div class="general_container">
+	<div class="header_noborder"><p><b>Rate Users</b> for past event <%= @event.short_description %>:</p></div>
+	
+	
+	<% @commited_replies.each do |reply| %>               
+	
+	<div class="<%= cycle('replies_even', 'replies_odd') %>">
+		<div class="left"><%= image_tag reply.user.profile.avatar.url(:thumb) %></div>
+		<div class="center_rating">
+			<p><p><%= reply.user.name %><br>
+				<% if reply.user.ratings.where(:event_id => @event).empty? %>
+		
+			  	  <%= link_to "C", new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "cool"), :class => "button" %>
+					<%= link_to "O", new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "ok"), :class => "button" %> 
+					<%= link_to "G", new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "gay"), :class => "button" %>
+					<%= link_to "D", new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "didnt_show_up"), :class => "button" %>
+	  
+		
+		
+				  <% else %>		
+		
+		
+				  <% if reply.user.ratings.where(:event_id => reply.event.id).first.comment %>
+		
+		
+				  already rated & commented user
+				  <% else %>
+				 <%= link_to "Comment?", edit_rating_path(:id => reply.user.id), :class => "button" %>
+				  <% end %>
+		
+		
+	            
+				<% end %>
+				
+			</p></div>
+		
+		
+		<div class="right">
+			
+			
+			
+			
+			
+		</div>
+		
+		
+		
+	</div>
+	
+	<% end %>
+	
+	
+	
+	
+	
+	
+</div>
+
+
+
+
+
+
+<% end %>
