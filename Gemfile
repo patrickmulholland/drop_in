@@ -16,6 +16,7 @@ gem "geocoder"
 gem "bhm-google-maps"
 
 gem 'devise'
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
