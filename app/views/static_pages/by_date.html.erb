@@ -12,6 +12,21 @@
 	
 	Reply or <%# link_to 'create your own', new_event_path %></p></div> -->
 
+	<% if @events.count == 0 %>
+		
+	<div class="how_to_container_replies">
+	
+		<p><b>Currently there are no events at all.</b></p>
+		<p>Be the first to <%= link_to "create one", new_event_path %> and let other users take part.</p>
+	
+	</div>
+	
+	
+	
+	
+	
+	
+	<% else %>
 
 <% @events.order("created_at DESC").each do |event| %>
 
@@ -64,6 +79,8 @@
 
 
 <%= will_paginate(@events) %>
+
+<% end %>
 
 <% end %>
 
