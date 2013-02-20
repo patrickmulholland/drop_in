@@ -1,9 +1,8 @@
 ActionMailer::Base.smtp_settings = {
-  :address              => "mail.gmx.net",
-  :port                 => 25,
-  :domain               => "gmx.net",
+  :address              => "smtp.mandrillapp.com",
+  :port                 => 587,
   :user_name            => "patrick.mulholland@gmx.de",
-  :password             => "Babylon23",
+  :password             => "babylon23",
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
