@@ -280,7 +280,7 @@ body #wrapper #content .head_container{
 }
 
 body #wrapper #content .head_container p{
-	width: 50%;
+	width: 42%;
 	float: left;
 	padding: 11px 0 8px 10px;
 	font-weight: bold;
@@ -289,7 +289,7 @@ body #wrapper #content .head_container p{
 body #wrapper #content .head_container .head_right{
 	text-align: right;
 	margin-right: 9px;
-	width: 30%;
+	width: 42%;
 	padding: 8px 0 8px 10px;
 	float: right;
 }
@@ -717,7 +717,6 @@ body #wrapper #content .general_container .profile_content .left img{
 
 
 body #wrapper #content .general_container .profile_content .right{
-	background: p;
 	padding-right: 3%;
 	width: 56%;
 	float: left;
@@ -1128,7 +1127,6 @@ body #wrapper #content .general_container .content .general_test{
 }
 
 body #wrapper #content .general_container .content .left{
-	
 	float: left;
 	padding-top: 8px;
 	padding-bottom: 8px;
@@ -1143,9 +1141,8 @@ body #wrapper #content .general_container .content .left img{
 }
 
 body #wrapper #content .general_container .content .right{
-	
 	float: left;
-	width: 78%;
+	width: 75%;
     height: 64px;
 	display: table;
 	
@@ -1362,6 +1359,29 @@ body #wrapper #content .general_container .menu_content .menu{
 body #wrapper #content .general_container .menu_content img{
 	display: none;
 }
+
+
+
+
+body #wrapper #content .general_container .profile_content .left{
+	display: none;
+	
+	
+}
+
+
+body #wrapper #content .general_container .profile_content .right{
+	width: 89%;
+	padding-left: 3.5%;
+	padding-right: 7%;
+	
+	
+	
+}
+
+
+
+
 
 
 	

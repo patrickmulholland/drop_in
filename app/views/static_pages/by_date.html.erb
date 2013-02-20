@@ -1,5 +1,5 @@
 
-<% headline_counter = 0 %>
+<% date_counter = 0 %>
 
 <% content_for :no_container do %>
 
@@ -15,7 +15,7 @@
 
 <% @events.order("created_at DESC").each do |event| %>
 
-<% if event.date != headline_counter %>
+<% if event.date != date_counter %>
 
 
 <div class="head_container">
@@ -56,7 +56,7 @@
 		
 </div>
 
-	
+<% date_counter = event.date %>
 
 
 </div><!-- end post_container -->
