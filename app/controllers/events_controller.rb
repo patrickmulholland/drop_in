@@ -69,6 +69,9 @@ class EventsController < ApplicationController
     @reply = Reply.where(:user_id => current_user, :event_id => @event).first
     @reply.commit = true
     if @reply.save
+      
+      NotificationMailer.commit_notification(@reply).deliver
+      
       redirect_to replies_path, notice: "Successfully Commited"
     else
       redirect_to replies_path, notice: "Something wrong!"

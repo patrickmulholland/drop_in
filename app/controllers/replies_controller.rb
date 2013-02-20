@@ -57,6 +57,7 @@ class RepliesController < ApplicationController
     @reply = Reply.find(params[:id])
     @reply.approved = true
     if @reply.save
+      NotificationMailer.invitation_notification(@reply).deliver
       redirect_to events_path, notice: "You sucessfully allowed the user to see all."
     else
       redirect_to events_path, notice: "Something went wrong."
@@ -72,6 +73,9 @@ class RepliesController < ApplicationController
 
     respond_to do |format|
       if @reply.save
+        
+        NotificationMailer.reply_notification(@reply).deliver
+        
         format.html { redirect_to replies_path, notice: 'Reply was successfully created.' }
       else
         format.html { render action: "new" }
