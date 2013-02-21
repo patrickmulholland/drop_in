@@ -58,11 +58,6 @@
 
 
 
-
-
-
-
-
 <% else %> <!-- ###################if not logged in################### -->
 <div class="do_sign_up">
 <p><%= link_to "Sign up", new_user_registration_path %> to create Events and respond to other Users Events.</p><br><p>If you already have an account, please <%= link_to "Sign in", new_user_session_path %> <p>
@@ -71,3 +66,34 @@
 
 
 </div>
+
+<% if upcoming_events_for_current_user.count > 0 %>
+
+<div class ="general_container">
+	
+	<div class="upcoming_header">
+		<p>Your Events for today:</p>
+	</div>
+	<div class="upcoming_content">
+		
+		<% upcoming_events_for_current_user.each do |reply| %>
+		<div class="<%= cycle('content_even', 'content_odd') %>">
+		<p><%= reply.event.time.strftime("At %I:%M o'clock:") %></br>
+		<%= reply.event.short_description %></p>
+		</div>
+		<% end %>
+		
+	</div>
+	
+</div>
+
+<% end %>
+
+
+
+
+
+
+
+
+

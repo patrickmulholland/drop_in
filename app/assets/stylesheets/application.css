@@ -1037,6 +1037,41 @@ body #wrapper #content .general_container .replies_odd .right a{
 }
 
 
+/* -----------------Upcoming Notifier----------------- */
+
+body #wrapper #content .general_container .upcoming_header{
+	width: 100%;
+	
+}
+
+body #wrapper #content .general_container .upcoming_header p{
+	padding: 4px 0 4px 8px;
+	border-bottom: solid 1px #DDD;
+}
+
+body #wrapper #content .general_container .upcoming_content{
+	width: 100%;
+	overflow: auto;
+	padding-top: 8px;
+	background: #F0D8D8;
+}
+
+body #wrapper #content .general_container .upcoming_content .content_even{
+	background: #F0D8D8;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+body #wrapper #content .general_container .upcoming_content .content_odd{
+	padding-top: 8px;
+	background: #FFF;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+
+/* ---------------------------------- */
+
 body #wrapper #content .general_container .menu_header{
 	width: 100%;
 	
