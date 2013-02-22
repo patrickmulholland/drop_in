@@ -1,6 +1,8 @@
 
 <% content_for :no_container do %>
 
+<% provide(:title, "Your Events:") %>
+
 <% gate = false %>
 
 <% if @events.blank? %>

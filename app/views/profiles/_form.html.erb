@@ -1,5 +1,8 @@
 <% content_for :no_container do %>
 
+<% provide(:title, "Your Profile:") %>
+
+
 
 <%= form_for @profile, :html => { :multipart => true } do |f| %>
 

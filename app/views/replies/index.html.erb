@@ -1,5 +1,8 @@
 <% content_for :no_container do %>
 
+<% provide(:title, "Your Replies:") %>
+
+
 <% if @all_replies.blank? %> <!-- wenn neuer user ohne replies -->
 
 <div class="how_to_container_replies">

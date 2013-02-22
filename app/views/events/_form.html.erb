@@ -2,6 +2,9 @@
 
 
 <%= form_for(@event) do |f| %>
+
+<% provide(:title, "Your Event:") %>
+
   <% if @event.errors.any? %>
   
   
