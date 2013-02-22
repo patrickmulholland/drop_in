@@ -793,6 +793,7 @@ body #wrapper #content .general_container .rating .left{
 }
 
 body #wrapper #content .general_container .rating .left p{
+	
 	font-weight: bold;
 	padding: 4px 0 4px 8px;
 	border-top: 1px solid #CCC;
@@ -928,6 +929,22 @@ body #wrapper #content .general_container .replies_even .center p{
 	
 }
 
+body #wrapper #content .general_container .replies_even .center_rate{
+	width: 25%;
+	float: left;
+    height: 64px;
+	display: table;
+}
+
+
+body #wrapper #content .general_container .replies_even .center_rate p{
+	display:table-cell;
+	vertical-align:middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+
 body #wrapper #content .general_container .replies_even .center_rating{
 	width: 78%;
 	float: left;
@@ -956,9 +973,26 @@ body #wrapper #content .general_container .replies_even .right{
 	float: right;
 }
 
+
+
 body #wrapper #content .general_container .replies_even .right a{
 	color: #FFF;
 }
+
+
+body #wrapper #content .general_container .replies_even .right_rate{
+	text-align: right;
+	margin-top: 16px;
+	margin-right: 12px;
+	width: 55%;
+	float: right;
+}
+
+body #wrapper #content .general_container .replies_even .right_rate a{
+	padding:0 2px 0 2px;
+	margin: 0 0 0 2px;
+}
+
 
 body #wrapper #content .general_container .replies_odd {
 	width: 100%;
@@ -1409,12 +1443,11 @@ body #wrapper #content .general_container .profile_content .right{
 	width: 89%;
 	padding-left: 3.5%;
 	padding-right: 7%;
-	
-	
-	
 }
 
-
+body #wrapper #content .general_container .replies_even .center_rate{
+	display: none;
+}
 
 
 

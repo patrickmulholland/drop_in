@@ -8,39 +8,36 @@
 	
 	<div class="<%= cycle('replies_even', 'replies_odd') %>">
 		<div class="left"><%= image_tag reply.user.profile.avatar.url(:thumb) %></div>
-		<div class="center_rating">
-			<p><p><%= reply.user.name %><br>
-				<% if reply.user.ratings.where(:event_id => @event).empty? %>
+		<div class="center_rate">
+			<p><%= reply.user.name %></p></div>
 		
-			  	  <%= link_to "C", new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "cool"), :class => "button" %>
-					<%= link_to "O", new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "ok"), :class => "button" %> 
-					<%= link_to "G", new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "gay"), :class => "button" %>
-					<%= link_to "D", new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "didnt_show_up"), :class => "button" %>
+		
+		<div class="right_rate">
+			
+			
+			<% if reply.user.ratings.where(:event_id => @event).empty? %>
+		
+		  	  <%= link_to image_tag("/assets/rating_tup_w.png"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "cool"), :class => "button" %>
+				<%= link_to image_tag("/assets/rating_star_w.png"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "ok"), :class => "button" %> 
+				<%= link_to image_tag("/assets/rating_tdown_w.png"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "gay"), :class => "button" %>
+				<%= link_to image_tag("/assets/rating_cross_w.png"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "didnt_show_up"), :class => "button" %>
 	  
 		
 		
-				  <% else %>		
+			  <% else %>		
 		
 		
-				  <% if reply.user.ratings.where(:event_id => reply.event.id).first.comment %>
+			  <% if reply.user.ratings.where(:event_id => reply.event.id).first.comment %>
 		
 		
-				  already rated & commented user
-				  <% else %>
-				 <%= link_to "Comment?", edit_rating_path(:id => reply.user.id), :class => "button" %>
-				  <% end %>
+			  already rated & commented user
+			  <% else %>
+			 <%= link_to image_tag("/assets/rating_comment_w.png"), edit_rating_path(:id => reply.user.id), :class => "button" %>
+			  <% end %>
 		
 		
 	            
-				<% end %>
-				
-			</p></div>
-		
-		
-		<div class="right">
-			
-			
-			
+			<% end %>	
 			
 			
 		</div>
