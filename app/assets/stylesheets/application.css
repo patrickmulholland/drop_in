@@ -876,6 +876,10 @@ body #wrapper #content .general_container .static_content .left{
 	float: left;
 }
 
+body #wrapper #content .general_container .static_content .left p{
+	margin-bottom: 15px;
+}
+
 body #wrapper #content .general_container .static_content .right{
 	margin-top: 13px;
 	margin-right: 4%;
