@@ -34,7 +34,23 @@
 		
 		<div class="left"><p><%= event.date %></p></div>
 	
-	<div class="right"><p><% if count_new_replies_for_event(event) > 0%><b class="counter"><%= count_new_replies_for_event(event) %> new Replies</b><%end%><% if count_new_commits_for_event(event) > 0%><b class="counter"><%= count_new_commits_for_event(event) %> new Commits</b><% end %><% if count_new_replies_for_event(event) == 0 && count_new_commits_for_event(event) == 0%> &nbsp;<% end %></p></div></div>
+	<div class="right">
+		<p>
+			<% if count_new_replies_for_event(event) > 0%>
+			<b class="counter"><%= count_new_replies_for_event(event) %> new Replies</b>
+			<% end %>
+			
+			<% if count_new_commits_for_event(event) > 0%>
+			<b class="counter"><%= count_new_commits_for_event(event) %> new Commits</b>
+			<% end %>
+			
+			<% if count_new_comments_for_event(event) > 0%>
+			<b class="counter"><%= count_new_comments_for_event(event) %> new Comments</b>
+			<% end %>
+			
+			<% if count_new_replies_for_event(event) == 0 && count_new_commits_for_event(event) == 0%> &nbsp;<% end %></p>
+		
+		</div></div>
 
 	<div class="content">
 		

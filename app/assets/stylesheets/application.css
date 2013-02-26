@@ -867,6 +867,113 @@ body #wrapper #content .general_container .static_content .right{
 	border-left: 1px solid #CCC;
 }
 
+body #wrapper #content .general_container .comments_header {
+	width: 100%;
+	overflow: auto;
+	border-top: 1px solid #CCC;
+	background: #777;
+}
+
+body #wrapper #content .general_container .comments_header p {
+	color: #FFF;
+	padding: 3px 0 3px 10px;
+}
+
+body #wrapper #content .general_container .comments_even {
+	width: 100%;
+	overflow: auto;
+	line-height: 20px;
+	border-top: 1px solid #CCC;
+	background: #EEE;
+}
+
+
+body #wrapper #content .general_container .comments_even .far_left{
+	
+	float: left;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	
+}
+
+body #wrapper #content .general_container .comments_even .far_left img{
+	display: block;
+	margin: 0 12px 0 8px;
+	padding: 3px;
+	background: #FFF;
+	border: 1px solid #CCC;
+}
+
+body #wrapper #content .general_container .comments_even .far_right{
+	
+	width: 74%;
+	float: left;
+    height: 64px;
+	display: table;
+}
+
+
+body #wrapper #content .general_container .comments_even .far_right p{
+	display:table-cell;
+	vertical-align:middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+
+
+body #wrapper #content .general_container .comments_odd {
+	width: 100%;
+	overflow: auto;
+	line-height: 20px;
+	border-top: 1px solid #CCC;
+	background: #FFF;
+}
+
+body #wrapper #content .general_container .comments_odd .far_left{
+	
+	float: left;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	
+}
+
+body #wrapper #content .general_container .comments_odd .far_left img{
+	display: block;
+	margin: 0 12px 0 8px;
+	padding: 3px;
+	background: #FFF;
+	border: 1px solid #CCC;
+}
+
+body #wrapper #content .general_container .comments_odd .far_right{
+	
+	width: 74%;
+	float: left;
+    height: 64px;
+	display: table;
+}
+
+
+body #wrapper #content .general_container .comments_odd .far_right p{
+	display:table-cell;
+	vertical-align:middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+
+body #wrapper #content .general_container .replies_header {
+	width: 100%;
+	overflow: auto;
+	border-top: 1px solid #CCC;
+	background: #777;
+}
+
+body #wrapper #content .general_container .replies_header p {
+	color: #FFF;
+	padding: 3px 0 3px 10px;
+}
 
 body #wrapper #content .general_container .replies_even {
 	width: 100%;

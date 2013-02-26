@@ -30,6 +30,11 @@
 	<div class="counter"><%= count_new_commits_for_events(current_user.events) %> New Commits</div>
 	<% end %>
 	
+	<% if count_new_comments_for_events(current_user.events) > 0 %>
+	<div class="counter"><%= count_new_comments_for_events(current_user.events) %> New Comments</div>
+	<% end %>
+	
+	
 	</div>
 
 	<div class="item_odd"><%= link_to "Your Replies", replies_path %>
@@ -37,7 +42,6 @@
 		<% if count_new_invitations > 0 %>
 	<div class="counter"><%= count_new_invitations %> New Invitations</div>
 	<% end %>	
-	
 	
 	
 	</div>

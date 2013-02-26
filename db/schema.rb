@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222084158) do
+ActiveRecord::Schema.define(:version => 20130226081625) do
+
+  create_table "comments", :force => true do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+    t.string  "content"
+    t.boolean "looked_at", :default => false
+  end
 
   create_table "events", :force => true do |t|
     t.string   "user_id"

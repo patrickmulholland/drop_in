@@ -30,6 +30,15 @@ class EventsController < ApplicationController
           reply.save
         end
       end
+      
+      @comments_unseen = Comment.where(:event_id => @event, :looked_at => false)
+      @comments_unseen.each do |comment|
+        if comment.looked_at == false
+          comment.looked_at = true
+          comment.save
+        end
+      end
+      
       @commits_unseen = Reply.where(:event_id => @event, :commit => true, :looked_at_commit => false)
       @commits_unseen.each do |commit|
         if commit.looked_at_commit == false

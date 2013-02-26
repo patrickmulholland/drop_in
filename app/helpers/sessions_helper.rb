@@ -71,6 +71,18 @@ module SessionsHelper
     Reply.where(:user_id => current_user, :approved => true, :looked_at_invitation => false).count
   end
   
+  def count_new_comments_for_events(events)
+      @id_array = []
+      events.each do |i|
+        @id_array << i.id
+      end
+      return Comment.where(:event_id => @id_array, :looked_at => false).count
+  end
+  
+  def count_new_comments_for_event(event)
+      return Comment.where("event_id = ? AND looked_at = ?", event, false).count
+  end
+  
   def find_current_reply(event)
     Reply.where(:user_id => current_user, :event_id => event).first
   end

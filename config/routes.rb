@@ -13,6 +13,7 @@ Twitter::Application.routes.draw do
   resources :events
   resources :profiles  
   resources :ratings
+  resources :comments
  
   
   match "/by_date", to: "static_pages#by_date"  
@@ -22,6 +23,8 @@ Twitter::Application.routes.draw do
   match "/userevents", to: "events#userevents"
   match "/commit", to: "events#commit"
   match "/refuse", to: "events#refuse"
+  
+  match "/add_comment", to: "comments#new"
   
   match "/authorize_to_see", to: "replies#authorize_to_see"
   

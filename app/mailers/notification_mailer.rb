@@ -27,4 +27,14 @@ class NotificationMailer < ActionMailer::Base
     mail(:to => reply.event.user.email, :subject => "Drop.in - You have a new Commit to one of your Events")
   end
   
+  def comment_notification(comment)
+    @receiver = comment.event.user.name
+    @sender = comment.user.name
+    @content = comment.content
+    @event_short_desc = comment.event.short_description
+    
+    mail(:to => comment.event.user.email, :subject => "Drop.in - You have a new Comment on one of your Events")
+  end
+  
+  
 end
