@@ -23,10 +23,12 @@
 </head>
 <body>
 	
+	<div id="bug"><%= link_to image_tag('/assets/bug.png'), contact_path %></div>
 	
 	
 	<div id="header">
 		<div id="header_container">
+			
 	
 		<div id="logo"><%= link_to image_tag('/assets/drop_logo.png'), root_path %></div>
 	
@@ -91,7 +93,7 @@
 
 </div> <!-- end wrapper -->
 
-<div id="footer"><div id="footer_container"><div id="footer_left">&copy; 2013 Drop.in</div><div id="footer_right"><%= link_to "Imprint", imprint_path %> | <%= link_to "How to", howto_path %> | <%= link_to "Contact", contact_path%></div></div></div>
+<div id="footer"><div id="footer_container"><div id="footer_left">&copy; 2013 Drop.in</div><div id="footer_right"><%= link_to "Imprint", imprint_path %> &nbsp;|&nbsp; <%= link_to "How to", howto_path %> &nbsp;|&nbsp; <%= link_to "Contact", contact_path%></div></div></div>
 
 </body>
 </html>

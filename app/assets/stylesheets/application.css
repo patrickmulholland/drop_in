@@ -117,7 +117,10 @@ html, body {
 	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
 }
 
-
+body #bug {
+	position: absolute;
+	right: 18%; top: 0px;
+}
 
 body #header {
 	width: 100%;
@@ -279,8 +282,15 @@ body #wrapper #content .head_container{
 	
 }
 
-body #wrapper #content .head_container p{
+body #wrapper #content .head_container p{	
 	width: 42%;
+	float: left;
+	padding: 11px 0 8px 10px;
+	font-weight: bold;
+}
+
+body #wrapper #content .head_container .full p{	
+	width: 90%;
 	float: left;
 	padding: 11px 0 8px 10px;
 	font-weight: bold;
@@ -652,7 +662,8 @@ body #wrapper #content .general_container .header_noborder p{
 
 body #wrapper #content .general_container .header a, a:visited, a:hover{
 	font-weight: bold;
-	color: #07A6E0;
+	font-size: 13px;
+	color: #000;
 }
 
 body #wrapper #content .general_container .header .left{
@@ -1461,6 +1472,15 @@ body #footer {
 	overflow: auto;
 	height: 29px;
 }
+
+body #footer a, a:visited, a:hover{
+	color: #CCC;
+	font-weight: normal;
+	font-size: 12px;
+	text-decoration: none;
+
+}
+
 body #footer #footer_container {
 	width: 85%;
 	margin-left: 7.5%;
@@ -1469,15 +1489,16 @@ body #footer #footer_container {
 }
 
 body #footer #footer_container #footer_left {
+
 	margin-top: 6px;
-	width: 50%;
+	width: 40%;
 	float: left;
 }
 
 body #footer #footer_container #footer_right {
 	margin-top: 6px;
 	text-align: right;
-	width: 50%;
+	width: 60%;
 	float: right;
 }
 

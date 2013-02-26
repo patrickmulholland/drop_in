@@ -36,11 +36,11 @@
 <% if event.date != date_counter %>
 
 
-<div class="head_container">
+<div class="head_container"><div class="full">
 <% if event.date.today? %>
-	<p>Events for Today:</p></div>
+	<p>Events for Today:</p></div></div>
 <% else %>
-	<p><%= event.date.strftime("%A, %d") %>:</p></div>
+	<p><%= event.date.strftime("%A, %d") %>:</p></div></div>
 <% end%>
 <% end %>
 
