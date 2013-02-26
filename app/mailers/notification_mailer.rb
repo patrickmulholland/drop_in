@@ -36,4 +36,13 @@ class NotificationMailer < ActionMailer::Base
     mail(:to => comment.event.user.email, :subject => "Drop.in - You have a new Comment on one of your Events")
   end
   
+  def contact_form(message)
+    @sender = message.name
+    @topic = message.topic
+    @email = message.email
+    @content = message.content
+  
+    mail(:to => "patrick.mulholland@gmx.de", :subject => "Drop.in - Contact Form")
+  end
+  
 end

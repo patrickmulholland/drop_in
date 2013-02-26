@@ -3,9 +3,9 @@
   	
 	
 	<div class="form_error_container">
-      <p><b><%= pluralize(comment.errors.count, "error") %> prohibited this reply from being saved:</p></b>
+      <p><b><%= pluralize(@comment.errors.count, "error") %> prohibited this reply from being saved:</p></b>
 
-      <p><% comment.errors.full_messages.each do |msg| %>
+      <p><% @comment.errors.full_messages.each do |msg| %>
         <%= msg %></br>
       <% end %></p>
     </div>

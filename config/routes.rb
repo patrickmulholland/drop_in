@@ -14,6 +14,7 @@ Twitter::Application.routes.draw do
   resources :profiles  
   resources :ratings
   resources :comments
+  resources :messages
  
   
   match "/by_date", to: "static_pages#by_date"  
@@ -31,6 +32,7 @@ Twitter::Application.routes.draw do
   match "imprint", to: "static_pages#imprint"
   match "howto", to: "static_pages#howto"
 
+  match "contact", to: "messages#new"
   
 
 

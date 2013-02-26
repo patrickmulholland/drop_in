@@ -1,0 +1,55 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+  	
+	
+	<div class="form_error_container">
+      <p><b><%= pluralize(@message.errors.count, "error") %> prohibited this reply from being saved:</p></b>
+
+      <p><% @message.errors.full_messages.each do |msg| %>
+        <%= msg %></br>
+      <% end %></p>
+    </div>
+  <% end %>
+  
+  
+  
+  
+  <div class="form_container">
+
+	  <div class="left">
+	
+		  <div class="street">
+
+	      <%= f.label :name %><br />
+	      <%= f.text_field :name %><br />
+	      <%= f.label :email %><br />
+	      <%= f.text_field :email %><br />
+	  </div>
+	  </div>
+	  
+	  <div class="right">
+		  <div class="input">
+		  
+	      <%= f.label :topic %><br />
+	      <%= f.select :topic, [["General", "General"], ["Found a bug", "Found a bug"], ["Report bad User", "Report bad User"]]%><br />
+	  </div>
+	  </div>
+	  
+	  <div class="bottom">
+		  <div class="details">
+		  
+	      <%= f.label "Your Message:" %><br />
+	      <%= f.text_area :content, :size => "10x11" %><br />
+	  </div>
+  	<div class="submit"><%= f.submit %></div>
+	  
+	  </div>
+
+
+
+		</div>
+	</div>
+<% end %>
+
+
+
