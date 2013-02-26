@@ -49,7 +49,7 @@ Twitter::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   #mailer:
-  config.action_mailer.default_url_options = { :host => 'fathomless-garden-5984.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'drop-in.herokuapp.com' }
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
