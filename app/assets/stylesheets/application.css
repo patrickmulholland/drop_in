@@ -710,8 +710,14 @@ body #wrapper #content .general_container .profile_content .left img{
 	background: #FFF;
 	border: 1px solid #CCC;
 	max-width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 35px;
 
+}
+
+body #wrapper #content .general_container .profile_content .left p{
+	margin-bottom: 10px;
+	line-height: 22px;
+	font-size: 14px;
 }
 
 
@@ -781,6 +787,7 @@ body #wrapper #content .general_container .profile_content .right .description t
 /* ----- Profile Rating Container -------*/
 
 body #wrapper #content .general_container .rating{
+	margin-top: 25px;
 	width: 100%;
 	overflow: auto;
 	background: #EEE;

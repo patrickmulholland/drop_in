@@ -36,5 +36,4 @@ class NotificationMailer < ActionMailer::Base
     mail(:to => comment.event.user.email, :subject => "Drop.in - You have a new Comment on one of your Events")
   end
   
-  
 end

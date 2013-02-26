@@ -23,8 +23,8 @@
 		    <%= @event.city %><br>
 			<%= @event.meeting_point %><br><br>
 		
-			<%= @event.date %><br>
-		    <%= @event.time %>
+			<%= @event.date.strftime("%A, %d.%m.%Y") %><br>
+		    <%= @event.time.strftime("%H:%M %p") %>
 		</div>
 		
 	</div>
