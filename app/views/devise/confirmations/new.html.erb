@@ -1,12 +1,32 @@
-<h2>Resend confirmation instructions</h2>
+
+<% content_for :no_container do %>
+
+<% provide(:title, "Resend Confirmation E-Mail") %>
 
 <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<div class="form_container">
 
-  <div><%= f.submit "Resend confirmation instructions" %></div>
+  <div class="default_forgot">
+	  <%= devise_error_messages! %>
+	  
+	  
+	  <%= f.label :email %><br />
+	    <%= f.email_field :email, :autofocus => true %><div class="default_submit"><div class="actions"><%= f.submit "Resend confirmation instructions" %></div></div></div>
+
+	    
+  </div>
+</div>
+
+
+
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+
+<% end %>
+
+
+
+
+
