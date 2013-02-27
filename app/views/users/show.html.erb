@@ -21,7 +21,15 @@
 			<p><b>Member since:</b><br><%= @user.created_at.strftime("%d.%m.%Y")%></p>
 			
 			
-			<p><b>Took part on:</b><br><%= link_to Reply.where(:user_id => @user, :commit => true).joins(:event).where("date < ?", Date.today).count, userevents_path(:user => @user)%><%= link_to " Events", userevents_path(:user => @user)%></p>
+			<p><b>Took part on:</b><br>
+				
+				<% if count_past_commits_user > 0 %>
+				<%= link_to count_past_commits_user, userevents_path(:user => @user)%><%= link_to " Events", userevents_path(:user => @user)%>
+				<% else %>
+				No events till now
+				<% end %>
+			
+			</p>
 			
 			
 						
