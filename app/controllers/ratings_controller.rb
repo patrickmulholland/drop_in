@@ -31,9 +31,9 @@ class RatingsController < ApplicationController
 
     respond_to do |format|
       if @rating.update_attributes(params[:rating])
-        format.html { redirect_to rate_users_path(:id => @event_id), notice: 'Reply was successfully updated.' }
+        format.html { redirect_to rate_users_path(:id => @event_id), notice: 'Comment created' }
       else
-        format.html { redirect_to rate_users_path(:id => @event_id), notice: 'Reply wrong.' }
+        format.html { redirect_to rate_users_path(:id => @event_id), notice: 'You cant leave the Comment blank!' }
       end
     end
   end

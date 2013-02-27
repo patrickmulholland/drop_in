@@ -7,5 +7,10 @@ class Profile < ActiveRecord::Base
   #Validations:
   
   
+  validates :hometown, :length => {:maximum => 30}
+  validates :profession, :length => {:maximum => 30}
+  validates :hobbies, :length => {:maximum => 80}
+  validates :about_you, :length => {:maximum => 1000}
+  
   
 end

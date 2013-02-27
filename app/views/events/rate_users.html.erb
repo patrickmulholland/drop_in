@@ -34,7 +34,7 @@
 		
 			  already rated & commented user
 			  <% else %>
-			 <%= link_to image_tag("/assets/rating_comment_w.png"), edit_rating_path(:id => reply.user.id), :class => "button" %>
+			 <%= link_to image_tag("/assets/rating_comment_w.png", :title => "Add Comment", :rel => "tooltip2"), edit_rating_path(:id => reply.user.id), :class => "button" %>
 			  <% end %>
 		
 		

@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
         
         redirect_to @event, notice: 'Comment was successfully created.'
       else
-         redirect_to @event, notice: 'Something went wrong'
+         render action: "new"
       end
     
 
