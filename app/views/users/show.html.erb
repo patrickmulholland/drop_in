@@ -123,7 +123,7 @@
 	
 	<div class="rating">
 		<div class="left"><p>Ratings:</p></div>
-		<div class="right"><p><b class="cool"><%= Rating.where(:user_id => @user, :result => "cool").count %></b><b class="ok"><%= Rating.where(:user_id => @user, :result => "ok").count %></b><b class="gay"><%= Rating.where(:user_id => @user, :result => "gay").count %></b></p></div>
+		<div class="right"><p><b class="cool" title="Nice!" rel="tooltip"><%= Rating.where(:user_id => @user, :result => "cool").count %></b><b class="ok" title="Ok." rel="tooltip"><%= Rating.where(:user_id => @user, :result => "ok").count %></b><b class="gay" title="Not again." rel="tooltip"><%= Rating.where(:user_id => @user, :result => "gay").count %></b></p></div>
 	</div>
 	
 	

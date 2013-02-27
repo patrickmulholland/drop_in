@@ -19,10 +19,10 @@
 			
 			<% if reply.user.ratings.where(:event_id => @event).empty? %>
 		
-		  	  <%= link_to image_tag("/assets/rating_tup_w.png"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "cool"), :class => "button" %>
-				<%= link_to image_tag("/assets/rating_star_w.png"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "ok"), :class => "button" %> 
-				<%= link_to image_tag("/assets/rating_tdown_w.png"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "gay"), :class => "button" %>
-				<%= link_to image_tag("/assets/rating_cross_w.png"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "didnt_show_up"), :class => "button" %>
+		  	  <%= link_to image_tag("/assets/rating_tup_w.png", :title => "Nice!", :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "cool"), :class => "button" %>
+				<%= link_to image_tag("/assets/rating_star_w.png", :title => "Ok.", :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "ok"), :class => "button" %> 
+				<%= link_to image_tag("/assets/rating_tdown_w.png", :title => "Not again.", :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "gay"), :class => "button" %>
+				<%= link_to image_tag("/assets/rating_cross_w.png", :title => "Didn't show up!", :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "didnt_show_up"), :class => "button" %>
 	  
 		
 		

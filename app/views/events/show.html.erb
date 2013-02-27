@@ -89,7 +89,7 @@
 			
 			<% if reply.approved == false %>
 
-			<%= link_to image_tag("/assets/invite_new.png", :title => "Invite this User to your Event"),
+			<%= link_to image_tag("/assets/invite_new.png", :title => "Invite this User to your Event", :rel => "tooltip2"),
 				authorize_to_see_path(:id => reply.id) %>
 	
 			<% else %>
@@ -98,12 +98,12 @@
 		
 				<% if reply.commit == true %>
 
-				<%= image_tag "/assets/invite_commit.png", :title => "This User takes part at your Event" %>
+				<%= image_tag "/assets/invite_commit.png", :title => "This User takes part at your Event", :rel => "tooltip2" %>
 
 				<% else %>
 				
 				
-				<%= image_tag "/assets/invite_pending.png", :title => "Waiting for User to commit" %>
+				<%= image_tag "/assets/invite_pending.png", :title => "Waiting for User to commit", :rel => "tooltip2" %>
 				
 				
 				<% end %>

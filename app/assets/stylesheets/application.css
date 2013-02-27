@@ -1515,16 +1515,98 @@ body #footer #footer_container #footer_right {
 
 /* jquery tooltip */
 
-#tooltip{
-	position:absolute;
-	font-size: 12px;
-	border:1px solid #CCC;
-	background:#FFF;
-	padding:0px 4px;
-	color:#333;
-	display:none;
-	
-	}	
+#tooltip
+{
+    text-align: center;
+	font-size: 13px;
+    color: #fff;
+    background: #111;
+    position: absolute;
+    z-index: 100;
+    padding: 2px 8px;
+}
+ 
+    #tooltip:after /* triangle decoration */
+    {
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid #111;
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: -7px;
+        margin-left: -7px;
+    }
+ 
+        #tooltip.top:after
+        {
+            border-top-color: transparent;
+            border-bottom: 7px solid #111;
+            top: -20px;
+            bottom: auto;
+        }
+ 
+        #tooltip.left:after
+        {
+            left: 7px;
+            margin: 0;
+        }
+ 
+        #tooltip.right:after
+        {
+            right: 7px;
+            left: auto;
+            margin: 0;
+        }
+
+
+		#tooltip2
+		{
+		    text-align: center;
+			font-size: 13px;
+		    color: #fff;
+		    background: #111;
+		    position: absolute;
+		    z-index: 100;
+		    padding: 2px 8px;
+		}
+ 
+		    #tooltip2:after /* triangle decoration */
+		    {
+		        width: 0;
+		        height: 0;
+		        border-left: 7px solid transparent;
+		        border-right: 7px solid transparent;
+		        border-bottom: 7px solid #111;
+		        content: '';
+		        position: absolute;
+		        left: 50%;
+		        top: -7px;
+		        margin-left: -7px;
+		    }
+ 
+		        #tooltip2.top:after
+		        {
+		            border-top-color: transparent;
+		            border-bottom: 7px solid #111;
+		            top: -20px;
+		            bottom: auto;
+		        }
+ 
+		        #tooltip2.left:after
+		        {
+		            left: 7px;
+		            margin: 0;
+		        }
+ 
+		        #tooltip2.right:after
+		        {
+		            right: 7px;
+		            left: auto;
+		            margin: 0;
+		        }
 
 
 

@@ -20,8 +20,7 @@
 
 	<div class="menu">
 		<div class="item"><%= link_to "Your Events", events_path %>
-	
-<!--  link_to "Your Events", events_path, :class => "tooltip", :title => "Check it out" -->	
+
 	
 			<% if count_new_replies_for_events(current_user.events) > 0 %>
 		<div class="counter"><%= count_new_replies_for_events(current_user.events) %> New Replies</div><% end %>
