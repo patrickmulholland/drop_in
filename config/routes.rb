@@ -29,10 +29,10 @@ Twitter::Application.routes.draw do
   
   match "/authorize_to_see", to: "replies#authorize_to_see"
   
-  match "imprint", to: "static_pages#imprint"
-  match "howto", to: "static_pages#howto"
+  match "/imprint", to: "static_pages#imprint"
+  match "/howto", to: "static_pages#howto"
 
-  match "contact", to: "messages#new"
+  match "/contact", to: "messages#new"
   
 
 

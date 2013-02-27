@@ -102,7 +102,8 @@ class EventsController < ApplicationController
   
   
   def userevents
-    @event = Event.where(:user_id => params[:user])
+    @users_replies = Reply.where(:user_id => params[:user], :commit => true).joins(:event).where("date < ?", Date.today).last(10)
+            
   end
 
   # GET /events/1/edit

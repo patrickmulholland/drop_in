@@ -1,9 +1,40 @@
-<% @event.each do |event| %>
 
-<p><%= event.short_description %> - <%= time_ago_in_words(event.created_at)%> ago. <i>(<%= event.replies.count%> People replied.)</i></p>
+<% content_for :no_container do %>
+
+<% provide(:title, "Showing Users Events:") %>
+
+
+<div class="head_container"><div class="full"><p><%= @users_replies.first.user.name %> took part on these Events:</p></div></div>
+
+<% @users_replies.each do |reply| %>
+
+
+<div class="general_container">
+
+
+
+	<div class="content">	
+		<div class="general_test"><%= reply.event.short_description %></div>
+	</div>
+
+	<div class="footer">
+		<div class="left"><p><%= reply.event.date %></p></div>
+		<div class="right">
+			<p>&nbsp;</p>
+		</div>
+	</div>
 	
+</div>
+
+
+
+
+
 <% end %>
 
+
+
+<% end %>
 
 
 

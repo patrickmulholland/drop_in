@@ -219,7 +219,7 @@ body #wrapper #content {
 	padding-top: 30px;
 	overflow: auto;
 	width: 100%;
-	padding-bottom: 45px;
+	padding-bottom: 80px;
 
 	
 }
@@ -232,9 +232,7 @@ body #wrapper #content .informer{
 	width: 99.5%;
 	margin-bottom: 25px;
 	border:1px solid #DDD;	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+
 	text-align: center;
 	color: red;
     box-shadow: 0px 5px 4px -4px #666;
@@ -252,9 +250,7 @@ body #wrapper #content .page_container{
 	width: 98%;
 	margin-bottom: 25px;
 	border:1px solid #DDD;	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+
 }
 
 body #wrapper #content .page_container h1{
@@ -274,9 +270,7 @@ body #wrapper #content .head_container{
 	width: 99.5%;
 	margin-bottom: 25px;
 	border:1px solid #DDD;	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+
     box-shadow: 0px 5px 4px -4px #666;
 	overflow: auto;
 	
@@ -289,8 +283,9 @@ body #wrapper #content .head_container p{
 	font-weight: bold;
 }
 
+
 body #wrapper #content .head_container .full p{	
-	width: 90%;
+	width: 95%;
 	float: left;
 	padding: 11px 0 8px 10px;
 	font-weight: bold;
@@ -328,9 +323,7 @@ body #wrapper #content .overview_container{
 	width: 99.5%;
 	margin-bottom: 25px;
 	border:1px solid #DDD;	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+
     box-shadow: 0px 5px 4px -4px #666;
 	
 }
@@ -378,9 +371,7 @@ body #wrapper #content .how_to_container_replies{
 	width: 93.5%;
 	padding: 15px 3% 0 3%;
 	border:1px solid #DDD;	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+
     box-shadow: 0px 5px 4px -4px #666;
 }
 
@@ -403,9 +394,7 @@ body #wrapper #content .form_error_container{
 	width: 93.5%;
 	padding: 15px 3% 0 3%;
 	border:1px solid #DDD;	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+
     box-shadow: 0px 5px 4px -4px #666;
 	color: red;
 	margin-bottom: 25px;
@@ -424,9 +413,7 @@ body #wrapper #content .form_container{
 	margin-bottom: 25px;
 	padding-bottom: 15px;
 	border:1px solid #DDD;	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+
 	overflow: auto;
 	
     box-shadow: 0px 5px 4px -4px #666;
@@ -605,9 +592,7 @@ body #wrapper #content .general_container{
 	width: 99.5%;
 	margin-bottom: 25px;
 	border:1px solid #DDD;	
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+
     box-shadow: 0px 5px 4px -4px #666;
 	
 }
@@ -676,9 +661,7 @@ body #wrapper #content .general_container .header a, a:visited, a:hover{
 body #wrapper #content .general_container .header .left{
 	width: 50%;
 	float: left;
-	-moz-border-radius-topleft: 5px;
-	-webkit-border-top-left-radius: 5px;
-	border-top-left-radius: 5px;
+
 }
 
 body #wrapper #content .general_container .header .left p{
@@ -690,9 +673,7 @@ body #wrapper #content .general_container .header .left p{
 body #wrapper #content .general_container .header .right{
 	width: 50%;
 	float: left;
-	-moz-border-radius-topright: 5px;
-	-webkit-border-top-right-radius: 5px;
-	border-top-right-radius: 5px;
+
 }
 
 body #wrapper #content .general_container .header .right p{
@@ -718,6 +699,14 @@ body #wrapper #content .general_container .profile_content .left{
 	padding-top: 20px;
 	padding-left: 3.5%;
 	padding-right: 7%;
+	
+	
+}
+
+body #wrapper #content .general_container .profile_content .left a, a:visited, a:hover{
+	font-size: 14px;
+	text-decoration: underline;
+	color: #000;
 	
 	
 }
@@ -1366,12 +1355,7 @@ body #wrapper #content .general_container .footer{
 	width: 100%;
 	overflow: auto;
 	background: #F4F4F4;
-	-moz-border-radius-bottomleft: 5px;
-	-webkit-border-bottom-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-	-moz-border-radius-bottomright: 5px;
-	-webkit-border-bottom-right-radius: 5px;
-	border-bottom-right-radius: 5px;
+
 	
 }
 
@@ -1608,6 +1592,41 @@ body #footer #footer_container #footer_right {
 		            margin: 0;
 		        }
 
+	/* pagination */
+	
+	.pagination {
+	  background: #FFF;
+	  border: 1px solid #CCC;
+	  text-align: center;
+	  padding: 4px;
+	  cursor: default;
+  	 font-size: 14px;}
+	  
+	  .pagination a, .pagination span {
+	    padding: 0.2em 0.3em; }
+	  
+	  .pagination .disabled {
+	    color: #aaaaaa; }
+	  
+	  .pagination .current {
+		  color: #FFF;
+	    font-style: normal;
+	    background-color: #999;
+	    display: inline-block;
+	    width: 1.4em;
+	    height: 1.4em;
+	    line-height: 1.35;
+	    -moz-border-radius: 3px;
+	    -webkit-border-radius: 3px;
+	    border-radius: 3px;
+	   }
+	  
+	  .pagination a {
+	    text-decoration: none;
+	    color: black; }
+	    .pagination a:hover, .pagination a:focus {
+			font-size: 14px;
+	      }
 
 
 /*		Tablet Layout: 768px.
