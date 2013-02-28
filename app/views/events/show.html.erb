@@ -39,21 +39,36 @@
 	<div class="footer">
 		<div class="full_right"><p>
 	
-	 <%= link_to "I'll be there!", commit_path(:id => @event), :class => "button"%>
+	 <%= link_to "I'll be there!", commit_path(:id => @event), :class => "button"%></p>
 	 
  </div>
-	
  </div>
 	 
 	<% elsif current_user != @event.user && find_current_reply(@event).commit == true %>
 	<div class="footer">
-		<div class="full_right"><p><%= link_to "Refuse commit", refuse_path(:id => @event), confirm: "You shure you can't come?", :class => "button"%>
+		<div class="full_right"><p>
+			
+			<% if @event.comments.blank? %>
+			<%= link_to "Add Comment", add_comment_path(:id => @event), :class => "button"%>
+			<% end %>
+			
+			
+			<%= link_to "Refuse commit", refuse_path(:id => @event), confirm: "You shure you can't come?", :class => "button"%></p>
+			
 </div>
-	
 </div>
 
 
-	<% end %>
+
+	<% elsif current_user == @event.user && @event.comments.blank? %>
+	<div class="footer">
+		<div class="full_right"><p><%= link_to "Add Comment", add_comment_path(:id => @event), :class => "button"%>
+</div>
+</div>
+
+
+
+<% end %>
 
 	
 </div>
