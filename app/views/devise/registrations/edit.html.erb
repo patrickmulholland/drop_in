@@ -2,13 +2,15 @@
 
 <% content_for :no_container do %>
 
-<div class ="form_container">
 
 
+<%= devise_error_messages! %>
 
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+  
+  
+  <div class ="form_container">
   
   
 <div class="left_signup">

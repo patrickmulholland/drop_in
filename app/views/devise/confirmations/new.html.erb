@@ -3,12 +3,13 @@
 
 <% provide(:title, "Resend Confirmation E-Mail") %>
 
+<%= devise_error_messages! %>
+
 <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
 
 <div class="form_container">
 
   <div class="default_forgot">
-	  <%= devise_error_messages! %>
 	  
 	  
 	  <%= f.label :email %><br />
