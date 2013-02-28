@@ -29,102 +29,15 @@
 		
 	</div>
 	
-	<!-- Comments implementieren: -->
-	
-	<% if @event.comments.any? %>
-	
-	
-	<div class="comments_header"><p>Comments:</p></div>
-	<% @event.comments.each do |comment| %>
-		
-	
-	<div class="<%= cycle('comments_even', 'comments_odd') %>">
-		<div class="far_left">
-			<% if comment.user.profile %>
-			<%= link_to image_tag(comment.user.profile.avatar.url(:thumb)), comment.user %>
-			<% else %>
-			<%= image_tag "/avatars/thumb/missing.png"%>
-			<% end %>
-		</div>
-		
-		<div class="far_right">
-			<p><%= comment.content %></p>
-		</div>
-		
-	</div>
-	
-	<% end %>
-	
-	<% end %>
-	
-	
-	<!-- Replies: -->
-	
-	
-	<% if current_user.id == @event.user_id.to_i #show replies only if current user is owner of this event %>
-	
-	<% if @event.replies.any? %>
-	
-	<div class="replies_header"><p>Replies:</p></div>
-	
-	
-	<% @event.replies.each do |reply| %>
-	
-	<div class="<%= cycle('replies_even', 'replies_odd') %>">
-		
-		<div class="left">
-		
-		<% if reply.user.profile %>
-		<%= link_to image_tag(reply.user.profile.avatar.url(:thumb)), reply.user %>
-		<% else %>
-		<%= image_tag "/avatars/thumb/missing.png"%>
-		<% end %></div>
-		
 
-		
-		
-		<div class="center"><p><%= link_to reply.user.name, reply.user %>
- 	wrote:<br><%= reply.message %></p></div>
-		<div class="right">
-			
-			<% if reply.approved == false %>
 
-			<%= link_to image_tag("/assets/invite_new.png", :title => "Invite this User to your Event", :rel => "tooltip2"),
-				authorize_to_see_path(:id => reply.id) %>
 	
-			<% else %>
-		
-				
-		
-				<% if reply.commit == true %>
 
-				<%= image_tag "/assets/invite_commit.png", :title => "This User takes part at your Event", :rel => "tooltip2" %>
-
-				<% else %>
-				
-				
-				<%= image_tag "/assets/invite_pending.png", :title => "Waiting for User to commit", :rel => "tooltip2" %>
-				
-				
-				<% end %>
-		
-	
-			<% end %>
-			
-			
-		</div>
-	</div>
-	
-	<% end %>
-	
-	
-	<% end %>
-	<% end %>
 	
 	<% if current_user != @event.user && find_current_reply(@event).commit == false %>
 	
 	<div class="footer">
-		<div class="center"><p>
+		<div class="full_right"><p>
 	
 	 <%= link_to "I'll be there!", commit_path(:id => @event), :class => "button"%>
 	 
@@ -134,14 +47,7 @@
 	 
 	<% elsif current_user != @event.user && find_current_reply(@event).commit == true %>
 	<div class="footer">
-		<div class="center"><p><%= link_to "Add Comment", add_comment_path(:id => @event), :class => "button"%><%= link_to "Refuse commit", refuse_path(:id => @event), confirm: "You shure you can't come?", :class => "button"%>
-</div>
-	
-</div>
-
-	<% elsif current_user == @event.user %>
-	<div class="footer">
-		<div class="center"><p><%= link_to "Add Comment", add_comment_path(:id => @event), :class => "button"%>
+		<div class="full_right"><p><%= link_to "Refuse commit", refuse_path(:id => @event), confirm: "You shure you can't come?", :class => "button"%>
 </div>
 	
 </div>
@@ -154,7 +60,126 @@
 
 
 
+<!-- Replies: -->
 
+
+	
+<% if current_user.id == @event.user_id.to_i #show replies only if current user is owner of this event %>
+	
+<% if @event.replies.any? %>
+	
+<div class="general_container">
+	
+<div class="header_noborder"><p>Replies:</p></div>
+	
+	
+<% @event.replies.each do |reply| %>
+	
+<div class="<%= cycle('replies_even', 'replies_odd') %>">
+		
+	<div class="left">
+		
+	<% if reply.user.profile %>
+	<%= link_to image_tag(reply.user.profile.avatar.url(:thumb)), reply.user %>
+	<% else %>
+	<%= image_tag "/avatars/thumb/missing.png"%>
+	<% end %></div>
+		
+
+		
+		
+	<div class="center"><p><%= link_to reply.user.name, reply.user %>
+wrote:<br><%= reply.message %></p></div>
+	<div class="right">
+			
+		<% if reply.approved == false %>
+
+		<%= link_to image_tag("/assets/invite_new.png", :title => "Invite this User to your Event", :rel => "tooltip2"),
+			authorize_to_see_path(:id => reply.id) %>
+	
+		<% else %>
+		
+				
+		
+			<% if reply.commit == true %>
+
+			<%= image_tag "/assets/invite_commit.png", :title => "This User takes part at your Event", :rel => "tooltip2" %>
+
+			<% else %>
+				
+				
+			<%= image_tag "/assets/invite_pending.png", :title => "Waiting for User to commit", :rel => "tooltip2" %>
+				
+				
+			<% end %>
+		
+	
+		<% end %>
+			
+			
+	</div>
+</div>
+
+	
+<% end %>
+</div>	
+	
+<% end %>
+<% end %>
+	
+	
+<!-- End Replies -->
+
+<!-- Comments : -->
+	
+<% if @event.comments.any? %>
+	
+	
+<div class="general_container">
+	
+<div class="header_noborder"><p>Comments:</p></div>
+
+<% @event.comments.each do |comment| %>
+		
+	
+<div class="<%= cycle('comments_even', 'comments_odd') %>">
+	<div class="far_left">
+		<% if comment.user.profile %>
+		<%= link_to image_tag(comment.user.profile.avatar.url(:thumb)), comment.user %>
+		<% else %>
+		<%= image_tag "/avatars/thumb/missing.png"%>
+		<% end %>
+	</div>
+		
+	<div class="far_right">
+		<p><%= comment.content %></p>
+	</div>
+		
+</div>
+
+
+<% end %>
+
+	<% if current_user != @event.user && find_current_reply(@event).commit == true %>
+	<div class="footer">
+		<div class="full_right"><p><%= link_to "Add Comment", add_comment_path(:id => @event), :class => "button"%>
+</div>
+	
+</div>
+
+	<% elsif current_user == @event.user %>
+	<div class="footer">
+		<div class="full_right"><p><%= link_to "Add Comment", add_comment_path(:id => @event), :class => "button"%>
+</div>
+	
+</div>
+<% end %>
+
+</div>	
+
+<% end %>
+
+<!-- End Comments -->
 
 
 
