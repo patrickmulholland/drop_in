@@ -1528,9 +1528,7 @@ color: red;
 
 /* -------------- End Right Content --------------- */
 
-body #footer {	
-	position:fixed;
-	bottom:0px;
+body #footer {
 	font-size: 12px;
 	line-height: 16px;
 	color: #CCC;

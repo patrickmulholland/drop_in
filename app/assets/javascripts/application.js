@@ -175,3 +175,36 @@ $( document ).ready( function()
         tooltip2.bind( 'click', remove_tooltip2 );
     });
 });
+
+   
+$(document).ready(function () {
+
+	positionFooter();
+       
+	       function positionFooter() {
+
+       var docHeight = $(window).height();
+       var footerHeight = $('#footer').height();
+       var footerTop = $('#footer').position().top + footerHeight;
+
+       if (footerTop < docHeight) {
+           $('#footer').css('margin-top', (docHeight - footerTop) + 'px');
+       }
+   }
+   
+   $(window)
+                  .scroll(positionFooter)
+                  .resize(positionFooter)
+   
+   });
+
+
+
+
+
+
+
+
+
+
+
