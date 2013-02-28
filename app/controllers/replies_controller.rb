@@ -58,9 +58,20 @@ class RepliesController < ApplicationController
     @reply.approved = true
     if @reply.save
       
-      if @reply.user.profile.receive_mails == true
+      
+      if @reply.user.profile.blank? == true
         NotificationMailer.invitation_notification(@reply).deliver
+        
+      
+      elsif @reply.user.profile.receive_mails == true
+        NotificationMailer.invitation_notification(@reply).deliver
+        
       end
+      
+      
+      
+      
+      
       
       redirect_to events_path, notice: "You sucessfully allowed the user to see all."
     else
@@ -78,8 +89,12 @@ class RepliesController < ApplicationController
     respond_to do |format|
       if @reply.save
         
-        if @reply.event.user.profile.receive_mails == true
+        if @reply.event.user.profile.blank? == true
           NotificationMailer.reply_notification(@reply).deliver
+        
+        elsif @reply.event.user.profile.receive_mails == true
+          NotificationMailer.reply_notification(@reply).deliver
+          
         end
         
         format.html { redirect_to replies_path, notice: 'Reply was successfully created.' }

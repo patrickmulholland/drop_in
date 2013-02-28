@@ -18,10 +18,16 @@ class CommentsController < ApplicationController
       
       if @comment.save
         
-        if @comment.user.profile.receive_mails == true && @comment.event.user.id != current_user.id
+        if @comment.user.profile.blank? == true && @comment.event.user.id != current_user.id
+          NotificationMailer.comment_notification(@comment).deliver
+        
+        elsif @comment.user.profile.receive_mails == true && @comment.event.user.id != current_user.id
           NotificationMailer.comment_notification(@comment).deliver
         end
         
+        
+        
+      
         redirect_to @event, notice: 'Comment was successfully created.'
       else
          render action: "new"

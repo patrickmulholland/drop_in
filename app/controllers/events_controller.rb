@@ -79,9 +79,14 @@ class EventsController < ApplicationController
     @reply.commit = true
     if @reply.save
       
-      if @reply.event.user.profile.receive_mails == true
+      if @reply.event.user.profile.blank? == true
+        NotificationMailer.commit_notification(@reply).deliver
+      
+      elsif @reply.event.user.profile.receive_mails == true
         NotificationMailer.commit_notification(@reply).deliver
       end
+      
+
       
       redirect_to replies_path, notice: "Successfully Commited"
     else
