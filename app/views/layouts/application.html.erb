@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Drop.in - Get to know new people - <%= yield(:title) %></title>
+  <title><%= t(".title") %> - <%= yield(:title) %></title>
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -37,31 +37,17 @@
 	<% if user_signed_in? %>
 		
 		
-		<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+		<%= link_to t(".signout"), destroy_user_session_path, :method => :delete %>
 	<% else %>
-		<%= link_to "Sign in", new_user_session_path %>
+		<%= link_to t(".signin"), new_user_session_path %>
 	<% end %>
 	<!-- #############Ende################## -->
 	</div> <!-- end right_menu -->
 </div><!-- end header_container -->
 	</div> <!-- end header -->
 	
-	<% if user_signed_in? == false %>
-	<div id="info_field"></div>
-	<% else %>
-	
-	<% unless current_user.profile %>
-	<div id="profile_notification"><b>You have no Profile.</b> <%= link_to "Create one", new_profile_path(@user) %> to improve your chance to get invitations.</div>
-	<% end %>
-	
-	<% if current_user.profile && current_user.profile.avatar.url == "/avatars/original/missing.png" %>
-	<div id="profile_notification"><b>You have no Profile-Picture.</b> <%= link_to "Upload one", edit_profile_path(current_user.profile) %> to let people see how you look.</div>
-	<% end %>
-	
-	
-	
-	<% end %>
-	
+	<%= render :partial => "notifications"%>
+			
 	
 	<div id="wrapper">
 	
@@ -93,7 +79,7 @@
 
 </div> <!-- end wrapper -->
 
-<div id="footer"><div id="footer_container"><div id="footer_left">&copy; 2013 Drop.in</div><div id="footer_right"><%= link_to "Imprint", imprint_path %> &nbsp;|&nbsp; <%= link_to "Help", help_path %> &nbsp;|&nbsp; <%= link_to "Contact", contact_path%></div></div></div>
+<div id="footer"><div id="footer_container"><div id="footer_left">&copy; 2013 Drop.in</div><div id="footer_right"><%= link_to t(".imprint"), imprint_path %> &nbsp;|&nbsp; <%= link_to t(".help"), help_path %> &nbsp;|&nbsp; <%= link_to t(".contact"), contact_path%></div></div></div>
 
 </body>
 </html>

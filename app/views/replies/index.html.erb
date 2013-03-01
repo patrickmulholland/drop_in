@@ -7,9 +7,8 @@
 
 <div class="how_to_container_replies">
 	
-	<p><b>You haven't replied on any Events yet.</b></p>
-	<p><%= link_to "Click here", by_date_path %> to find an event that you like to attend, and click on the reply-button. The user will look at your profile and invite you to his event if he likes.</p>
-	<p>Alternatively you can <%= link_to "create your own Event", new_event_path %>.</p>
+  <% render :partial => "translations"%>
+	<%= yield :replies_first_ever %>
 	
 </div>
 
@@ -18,22 +17,18 @@
 <% if @future_replies.blank? %><!-- wenn schon mal welche gemacht, aber gerade keine. -->
 
 <div class="how_to_container_replies">
-	
-	<p><b>You currently have no replies on future events.</b></p>
-	<p>Why not reply to a new one? You know how it works. Simply <%= link_to "click here", by_date_path %> and reply to one you like.</p>
-	<p>Alternatively you can as always <%= link_to "create your own Event", new_event_path %>.</p>
-	
+
+  <% render :partial => "translations"%>
+	<%= yield :replies_currently_empty %>
+  	
 </div>
 
 <% else%> <!-- wenn welche da -> auflistung aller zukünfitgen -->
 
 
-
-
-
 <% unless @replies_waiting.blank? %>
 
-<div class = "head_container"><p>Waiting for Invitation:</p></div>
+<div class = "head_container"><p><%= t(".waiting_replies")%></p></div>
 
 <% @replies_waiting.each do |reply| %>
 
@@ -72,7 +67,7 @@
 
 <% unless @replies_invited.blank? %>
 
-<div class = "head_container"><p>Upcoming Event Invitations:</p></div>
+<div class = "head_container"><div class="full"><p><%= t(".invited_replies")%></p></div></div>
 
 <% @replies_invited.each do |reply| %>
 
@@ -111,7 +106,7 @@
 
 <% unless @replies_commited.blank? %>
 
-<div class = "head_container"><p>Upcoming Events you commited:</p></div>
+<div class = "head_container"><div class="full"><p><%= t(".commited_replies")%></p></div></div>
 
 
 <% @replies_commited.each do |reply| %>

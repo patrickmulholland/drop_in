@@ -1,0 +1,99 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+de:
+
+  wrote: "schrieb"
+  reply: "Antworten"
+  welcome: "Willkommen"
+  
+  form_error: " das Senden dieses Formulares:"
+  comment_blank: "Kommentar darf nicht leer sein"
+  comment_created: "Kommentar wurde erstellt."
+  rating_wrong: "Beim Bewerten lief etwas schief."
+  rating_created: "Nutzer wurde erfolgreich Bewertet."
+  
+
+  layouts:
+    application:
+      title: "Drop.in - Lerne neue Leute kennen"
+      signout: "Ausloggen"
+      signin: "Einloggen"
+      imprint: "Impressum"
+      help: "Hilfe"
+      contact: "Kontakt"
+
+  static_pages:
+    by_date:
+      title: "Alle Events nach Datum:"
+      events_today: "Events heute:"
+
+    help:
+      title: "Hilfe:"
+
+  shared:
+    user_overview:
+      your_events: "Deine Events"
+      your_replies: "Deine Anfragen"
+      your_profile: "Dein Profil"
+      new_replies:
+        one: "1 neue Antwort"
+        other: "%{count} neue Antworten"
+      new_commits:
+        one: "1 neue Zusage"
+        other: "%{count} neue Zusagen"
+      new_comments:
+        one: "1 neuer Kommentar"
+        other: "%{count} neue Kommentare"
+      new_invitations:
+        one: "1 neue Einladung"
+        other: "%{count} neue Einladungen"
+      new_ratings:
+        one: "1 neues Rating"
+        other: "%{count} neue Ratings"
+      todays_events: "Deine Events heute:"
+      
+  replies:
+    new:
+      title: "Auf Event antworten:"
+    form:
+      your_reply: "Deine Antwort:"
+      submit: "Antwort erstellen"
+    index:
+      waiting_replies: "Wartet auf Einladung:"
+      invited_replies: "Events zu denen du eingeladen wurdest:"
+      commited_replies: "Events zu denen du zugesagt hast:"
+  
+  events:
+    rate_users:
+      title: "Bewerte und Kommentiere User:"
+      head: "Bewerte die Teilnehmer des Events - "
+      nice: "Super!"
+      ok: "War gut."
+      not_again: "Nicht nochmal."
+      didnt_show: "War nicht da!"
+      add_comment: "Kommentar hinzufügen"
+  
+  ratings:
+    edit:
+      title: "Dein Kommentar:"
+    form:
+      your_comment: "Dein Kommentar:"
+      submit_comment: "Kommentar abschicken"
+      
+      
+  activerecord:
+    errors:
+      messages:
+        blank: "kann nicht leer sein."
+    models:
+      reply: "Antwort"
+    attributes:
+      reply:
+        message: "Antwort"
+  errors:
+    template:
+      body: "test"
+      header:
+        one: "1 Fehler verhinderte"
+        other: "%{count} Fehler verhinderten"

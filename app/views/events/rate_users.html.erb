@@ -1,9 +1,9 @@
 <% content_for :no_container do %>
 
-<% provide(:title, "Rate and Comment Users:") %>
+<% provide(:title, t(".title")) %>
 
 <div class="general_container">
-	<div class="header_noborder"><p><b>Rate Users</b> for past event <%= @event.short_description %>:</p></div>
+	<div class="header_noborder"><p><b><%= t(".head")%></b><%= @event.short_description %>:</p></div>
 	
 	
 	<% @commited_replies.each do |reply| %>               
@@ -19,10 +19,10 @@
 			
 			<% if reply.user.ratings.where(:event_id => @event).empty? %>
 		
-		  	  <%= link_to image_tag("/assets/rating_tup_w.png", :title => "Nice!", :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "cool"), :class => "button" %>
-				<%= link_to image_tag("/assets/rating_star_w.png", :title => "Ok.", :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "ok"), :class => "button" %> 
-				<%= link_to image_tag("/assets/rating_tdown_w.png", :title => "Not again.", :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "gay"), :class => "button" %>
-				<%= link_to image_tag("/assets/rating_cross_w.png", :title => "Didn't show up!", :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "didnt_show_up"), :class => "button" %>
+		  	  <%= link_to image_tag("/assets/rating_tup_w.png", :title => t(".nice"), :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "cool"), :class => "button" %>
+				<%= link_to image_tag("/assets/rating_star_w.png", :title => t(".ok"), :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "ok"), :class => "button" %> 
+				<%= link_to image_tag("/assets/rating_tdown_w.png", :title => t(".not_again"), :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "gay"), :class => "button" %>
+				<%= link_to image_tag("/assets/rating_cross_w.png", :title => t(".didnt_show"), :rel => "tooltip2"), new_rating_path(:id => reply.user.id, :event_id => reply.event_id, :result => "didnt_show_up"), :class => "button" %>
 	  
 		
 		
@@ -32,9 +32,9 @@
 			  <% if reply.user.ratings.where(:event_id => reply.event.id).first.comment %>
 		
 		
-			  already rated & commented user
+			  
 			  <% else %>
-			 <%= link_to image_tag("/assets/rating_comment_w.png", :title => "Add Comment", :rel => "tooltip2"), edit_rating_path(:id => reply.user.id), :class => "button" %>
+			 <%= link_to image_tag("/assets/rating_comment_w.png", :title => t(".add_comment"), :rel => "tooltip2"), edit_rating_path(:id => reply.user.id), :class => "button" %>
 			  <% end %>
 		
 		

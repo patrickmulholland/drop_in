@@ -1,0 +1,13 @@
+
+<% if user_signed_in? == false %>
+<div id="info_field_en"></div>
+<% else %>
+	
+<% unless current_user.profile %>
+<div id="profile_notification"><b>You have no Profile.</b> <%= link_to "Create one", new_profile_path(@user) %> to improve your chance to get invitations.</div>
+<% end %>
+	
+<% if current_user.profile && current_user.profile.avatar.url == "/avatars/original/missing.png" %>
+<div id="profile_notification"><b>You have no Profile-Picture.</b> <%= link_to "Upload one", edit_profile_path(current_user.profile) %> to let people see how you look.</div>
+<% end %>
+<% end %>

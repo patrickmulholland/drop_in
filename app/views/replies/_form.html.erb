@@ -3,7 +3,7 @@
   	
 	
 	<div class="form_error_container">
-      <p><b><%= pluralize(@reply.errors.count, "error") %> prohibited this reply from being saved:</p></b>
+      <p><b><%= t("errors.template.header", count: @reply.errors.count) %> <%= t(:form_error)%></p></b>
 
       <p><% @reply.errors.full_messages.each do |msg| %>
         <%= msg %></br>
@@ -21,14 +21,14 @@
     <%= f.hidden_field :event_id %>
     <%= f.hidden_field :user_id %>
 
-    <%= f.label "Your Reply:" %><br />
+    <%= f.label t(".your_reply") %><br />
     <%= f.text_area :message, :size => "10x11" %>
 
     <%= f.hidden_field :approved %>
 
 	<div class="default_submit">
 		<div class="actions">
-    <%= f.submit %></div>
+    <%= f.submit t(".submit")%></div>
 </div>
 		</div>
 	</div>

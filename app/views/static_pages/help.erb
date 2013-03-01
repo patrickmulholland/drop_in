@@ -1,32 +1,11 @@
 <% content_for :no_container do %>
 
-<% provide(:title, "How to:") %>
+<% provide(:title, t(".title")) %>
 
 <div class="how_to_container_replies">
 	
-	<p><b>How to:</b></p>
-	<p>Drop.in is a place to find people for activities you like to do.<br>
-		Simply reply on others users events and wait for them to invite you,<br>
-		or create your own events and let other people respond on them.</p>
-		
-		<p>This how to has to be updated!</p>
-		
-		<br />
-		<p><b>I haven't received an confirmation E-Mail:</b></p>
-		<p>This shouldn't happen but sometimes can happen. Simply click 
-		
-		
-		
-		
-			<%= link_to "here", new_confirmation_path(:user) %>
-		
-		
-		
-		
-		
-			 and follow the resend E-Mail instructions.</p>
-				
-				
+<% render :partial => "translations" %>
+<%= yield :help_text %>
 	
 </div>
 

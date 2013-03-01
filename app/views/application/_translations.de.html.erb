@@ -1,0 +1,52 @@
+
+<% content_for :no_events_at_all do %>
+
+<p><b>Momentan gibt es keine Events.</b></p> <p>Dei der erste der einen <%= link_to "ertellt",
+new_event_path %> und lass andere Nutzer daran teilnehmen.</p>
+
+<% end %>
+
+
+
+<% content_for :help_text do %>
+
+ <p><b>Generell:</b></p> <p>Drop in ist ein Ort an dem du Leute finden kannst für dinge die du gerne tun
+würdest. Antworte einfach auf die Events anderer user und warte bis Sie dich einlade, oder erstelle
+deine eigenen Events und lass andere Leute darauf reagieren.</p>
+
+ <p>Dieses How to muss upgedated werden.</p>
+
+ <br /> <p><b>Ich habe keine Registrierungs-Mail erhalten:</b></p> <p>Das sollte nicht passieren, kann
+aber mal vorkommen. Klicke einfach
+
+ <%= link_to "hier", new_confirmation_path(:user) %>
+
+ und folge den weiteren Anweisungen.</p>
+
+ <% end %>
+
+
+
+ <% content_for :imprint do %>
+
+ <p><b>Impressum:</b></p> <p>Max Mustermann GmbH<br> Musterstraße 38<br> 80545 München</p>
+
+ <p>Tel: 089 / 34342348-0<br> Fax: 089 / 34342348-10</p>
+
+ <p>E-Mail: mustermann@mustermann.de</p>
+
+ <% end %>
+
+
+ <% content_for :replies_first_ever do %>
+<p><b>Du hast auf noch keine Events geantwortet.</b></p>
+<p><%= link_to "Klicke hier", by_date_path %> um einen Event zu finden an dem du gerne Teilnehmen würdest und klicke auf "Antworten". Der Nutzer wird sich dann deine Antwort ansehen und dich einladen falls er möchte.</p>
+<p>Alternativ kannst du natürlich <%= link_to "deinen eigenen Event erstellen.", new_event_path %>.</p>
+<% end %>
+
+
+ <% content_for :replies_currently_empty do %>
+<p><b>Du hast momentan auf keine Events geantwortet.</b></p>
+<p>Warum suchst du dir nicht einfach einen neuen? Du weißt wie es geht - <%= link_to "klicke hier", by_date_path %> und antworte auf einen den du magst.</p>
+<p>Alternativ kannst du natürlich wie immer <%= link_to "deinen eigenen Event erstellen", new_event_path %></p>
+<% end %>

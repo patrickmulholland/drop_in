@@ -10,9 +10,9 @@ class RatingsController < ApplicationController
                                       
     @event = Event.find(params[:event_id]) #event finden zu dem man zurückleitet
      if @rating.save
-       redirect_to rate_users_path(:id => @event), notice: 'Rating was successfully created.'
+       redirect_to rate_users_path(:id => @event), notice: t(".rating_created")
       else
-        redirect_to rate_users_path(:id => @event), notice: 'Something went wrong'
+        redirect_to rate_users_path(:id => @event), notice: t(".rating_wrong")
         
        
      end
@@ -31,9 +31,9 @@ class RatingsController < ApplicationController
 
     respond_to do |format|
       if @rating.update_attributes(params[:rating])
-        format.html { redirect_to rate_users_path(:id => @event_id), notice: 'Comment created' }
+        format.html { redirect_to rate_users_path(:id => @event_id), notice: t(".comment_created") }
       else
-        format.html { redirect_to rate_users_path(:id => @event_id), notice: 'You cant leave the Comment blank!' }
+        redirect_to edit_ratings_path(:id => @event_id)
       end
     end
   end

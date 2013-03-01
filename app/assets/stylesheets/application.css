@@ -178,10 +178,16 @@ body #header #header_container #right_menu{
 	float: right;
 }
 
-body #info_field {
+body #info_field_en {
 	width: 100%;
 	height: 200px;
-	background: #000 url("/assets/info_field_2.jpg") no-repeat center;
+	background: #000 url("/assets/info_field_en.jpg") no-repeat center;
+}
+
+body #info_field_de {
+	width: 100%;
+	height: 200px;
+	background: #000 url("/assets/info_field_de.jpg") no-repeat center;
 }
 
 body #profile_notification {
