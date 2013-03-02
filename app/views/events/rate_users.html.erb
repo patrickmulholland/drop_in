@@ -9,8 +9,15 @@
 	<% @commited_replies.each do |reply| %>               
 	
 	<div class="<%= cycle('replies_even', 'replies_odd') %>">
-		<div class="left"><%= image_tag reply.user.profile.avatar.url(:thumb) %></div>
-		<div class="center_rate">
+		<div class="left">
+			
+			<% if reply.user.profile %>
+			<%= image_tag(reply.user.profile.avatar.url(:thumb)) %>
+			<% else %>
+			<%= image_tag "/avatars/thumb/missing.png"%>
+			<% end %></div>
+			
+			<div class="center_rate">
 			<p><%= reply.user.name %></p></div>
 		
 		

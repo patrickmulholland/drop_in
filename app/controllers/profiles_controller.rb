@@ -13,7 +13,7 @@ def create # wird nicht angezeigt. ist nur zum controllen "post"
   @profile = Profile.new(params[:profile])
 
     if @profile.save
-      redirect_to root_path, notice: 'Profile was successfully created.'
+      redirect_to @profile.user, notice: 'Profile was successfully created.'
     else
       render action: "new"
     end

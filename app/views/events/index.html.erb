@@ -1,7 +1,7 @@
 
 <% content_for :no_container do %>
 
-<% provide(:title, "Your Events:") %>
+<% provide(:title, t(".title")) %>
 
 <% gate = false %>
 
@@ -10,10 +10,8 @@
 
 <div class="how_to_container_replies">
 	
-	<p><b>You haven't created any Events yet.</b></p>
-	<p><%= link_to "Click here", new_event_path %> and quickly create one. Users
-		can reply on your event and you can decide if you want to invite them.</p>
-	<p>If you don't know what to do, <%= link_to "look here", by_date_path %> for inspiration and click on the reply button to take part at other users events.</p>
+  <% render :partial => "translations" %>
+  <%= yield :no_events_created %>
 	
 </div>
 
@@ -22,7 +20,7 @@
 
 <% else%>
 
-<div class="head_container"><p>Your events:</p><div class="head_right"><%= link_to 'Create New', new_event_path, :class => "button" %></div></div>
+<div class="head_container"><p><%= t(".your_events")%>:</p><div class="head_right"><%= link_to t(".create_new"), new_event_path, :class => "button" %></div></div>
         
 <% @events.order("date DESC").each do |event| %>    
 
@@ -37,15 +35,15 @@
 	<div class="right">
 		<p>
 			<% if count_new_replies_for_event(event) > 0%>
-			<b class="counter"><%= count_new_replies_for_event(event) %> new Replies</b>
+			<b class="counter"><%= count_new_replies_for_event(event) %> <%= t(".new_replies")%></b>
 			<% end %>
 			
 			<% if count_new_commits_for_event(event) > 0%>
-			<b class="counter"><%= count_new_commits_for_event(event) %> new Commits</b>
+			<b class="counter"><%= count_new_commits_for_event(event) %> <%= t(".new_commits")%></b>
 			<% end %>
 			
 			<% if count_new_comments_for_event(event) > 0%>
-			<b class="counter"><%= count_new_comments_for_event(event) %> new Comments</b>
+			<b class="counter"><%= count_new_comments_for_event(event) %> <%= t(".new_comments")%></b>
 			<% end %>
 			
 			<% if count_new_replies_for_event(event) == 0 && count_new_commits_for_event(event) == 0%> &nbsp;<% end %></p>
@@ -64,14 +62,14 @@
 
 <div class="footer">
 	
-	<div class="left"><p><b class="replies" title="Number of Replies" rel="tooltip"><%= event.replies.count %></b><b class="commits" title="Number of Commits" rel="tooltip"><%= count_commits(event) %></b></p></div>
+	<div class="left"><p><b class="replies" title=<%= t(".number_of_replies") %> rel="tooltip"><%= event.replies.count %></b><b class="commits" title=<%= t(".number_of_commits") %> rel="tooltip"><%= count_commits(event) %></b></p></div>
 
 
 <div class="right">
 
-<p><%= link_to 'Show', event, :class => 'button'%>
-	<%= link_to 'Edit', edit_event_path(event), :class => 'button' %>
-	<%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'button' %>  </p>
+<p><%= link_to t(:show), event, :class => 'button'%>
+	<%= link_to t(:edit), edit_event_path(event), :class => 'button' %>
+	<%= link_to t(:delete), event, method: :delete, data: { confirm: t(:standard_confirm) }, :class => 'button' %>  </p>
 </div>
 </div>
 </div>
@@ -81,7 +79,7 @@
 
 <% if gate == false %>
 
-<div class="head_container"><p>Past events:</p></div>
+<div class="head_container"><p><%= t(".past_events")%></p></div>
 
 <% end %>
 
@@ -92,7 +90,7 @@
 		
 		<div class="left"><p><%= event.date %></p></div>
 	
-	<div class="right"><p><% if count_new_replies_for_event(event) > 0%><b class="counter"><%= count_new_replies_for_event(event) %> new Replies</b><%end%><% if count_new_commits_for_event(event) > 0%><b class="counter"><%= count_new_commits_for_event(event) %> new Commits</b><% end %><% if count_new_replies_for_event(event) == 0 && count_new_commits_for_event(event) == 0%> &nbsp;<% end %></p></div></div>
+	<div class="right"><p><% if count_new_replies_for_event(event) > 0%><b class="counter"><%= count_new_replies_for_event(event) %> <%= t(".new_replies")%></b><%end%><% if count_new_commits_for_event(event) > 0%><b class="counter"><%= count_new_commits_for_event(event) %> <%= t(".new_commits")%></b><% end %><% if count_new_replies_for_event(event) == 0 && count_new_commits_for_event(event) == 0%> &nbsp;<% end %></p></div></div>
 
 	<div class="content">
 		
@@ -106,7 +104,7 @@
 
 <div class="footer">
 	
-	<div class="left"><p><b class="replies" title="Number of Replies" rel="tooltip"><%= event.replies.count %></b><b class="commits" title="Number of Commits" rel="tooltip"><%= count_commits(event) %></b></p></div>
+	<div class="left"><p><b class="replies" title=<%= t(".number_of_replies") %> rel="tooltip"><%= event.replies.count %></b><b class="commits" title=<%= t(".number_of_commits") %> rel="tooltip"><%= count_commits(event) %></b></p></div>
 
 
 <div class="right">
@@ -115,11 +113,11 @@
 	
 	<% if event.ratings.count != event.replies.where(:commit => true).count %>
 		
-		<%= link_to "Rate Users", rate_users_path(:id => event), :class => "button" %>
+		<%= link_to t(".rate_users"), rate_users_path(:id => event), :class => "button" %>
 			
 		<% elsif event.ratings.where(:comment => nil).count > 0 %>
 			
-		<%= link_to "Comment Users", rate_users_path(:id => event), :class => "button" %>
+		<%= link_to t(".comment_users"), rate_users_path(:id => event), :class => "button" %>
 			
 			
 	<% end %>

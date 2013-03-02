@@ -1,4 +1,4 @@
-<% provide(:title, 'Sign up') %>
+<% provide(:title, t(".title")) %>
 
 <% content_for :no_container do %>
 
@@ -17,10 +17,10 @@
   
   
 	<div class="left_signup">
-		<%= f.label :name %>
-		<%= f.label :email %>
-		<%= f.label :password %>
-		<%= f.label "Confirmation:" %>
+		<%= f.label t(".name") %>
+		<%= f.label t(".email") %>
+		<%= f.label t(".password") %>
+		<%= f.label t(".confirmation") %>
 	</div>
 	
 	<div class="right_signup">
@@ -31,7 +31,7 @@
 	</div>
 	
 	<div class="footer_center">
-		<div class="actions"><%= f.submit "Sign up" %></div>
+		<div class="actions"><%= f.submit t(".submit") %></div>
 	</div>
   
 

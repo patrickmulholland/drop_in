@@ -1,5 +1,5 @@
 
-<% provide(:title, "Sign in") %>
+<% provide(:title, t(".title")) %>
 
 
 <% content_for :no_container do %>
@@ -13,8 +13,8 @@
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
 <div class="left_signup">
-	<%= f.label :email %>
-	<%= f.label :password %>
+	<%= f.label t(".email") %>
+	<%= f.label t(".password") %>
     
 	
 </div>
@@ -29,16 +29,16 @@
 <div class="f_left"><div class="small">
 	
     <% if devise_mapping.rememberable? -%>
-    <%= f.check_box :remember_me %>&nbsp;Remember me&nbsp;&nbsp;&nbsp;
+    <%= f.check_box :remember_me %>&nbsp;<%= t(".remember_me") %>&nbsp;&nbsp;&nbsp;
     <% end -%>
 	
 	<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-	  <%= link_to "Forgot password?", new_password_path(resource_name) %><br />
+	  <%= link_to t(".forgot_password"), new_password_path(resource_name) %><br />
 	<% end -%>
 	
 </div>
 </div>
-<div class="f_right"><div class="actions"><%= f.submit "Sign in" %></div></div>
+<div class="f_right"><div class="actions"><%= f.submit t(".submit") %></div></div>
 
 </div>
 

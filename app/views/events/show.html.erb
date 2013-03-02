@@ -1,6 +1,6 @@
 <% content_for :no_container do %>
 
-<% provide(:title, "Showing Event:") %>
+<% provide(:title, t(".title")) %>
 
 <div class="general_container">
 	<div class="header"><p><%= @event.date %></p></div>
@@ -39,7 +39,7 @@
 	<div class="footer">
 		<div class="full_right"><p>
 	
-	 <%= link_to "I'll be there!", commit_path(:id => @event), :class => "button"%></p>
+	 <%= link_to t(".commit_button"), commit_path(:id => @event), :class => "button"%></p>
 	 
  </div>
  </div>
@@ -49,11 +49,11 @@
 		<div class="full_right"><p>
 			
 			<% if @event.comments.blank? %>
-			<%= link_to "Add Comment", add_comment_path(:id => @event), :class => "button"%>
+			<%= link_to t(".add_comment_button"), add_comment_path(:id => @event), :class => "button"%>
 			<% end %>
 			
 			
-			<%= link_to "Refuse commit", refuse_path(:id => @event), confirm: "You shure you can't come?", :class => "button"%></p>
+			<%= link_to t(".uncommit_button"), refuse_path(:id => @event), confirm: t(".uncommit_confirmation"), :class => "button"%></p>
 			
 </div>
 </div>
@@ -62,7 +62,7 @@
 
 	<% elsif current_user == @event.user && @event.comments.blank? %>
 	<div class="footer">
-		<div class="full_right"><p><%= link_to "Add Comment", add_comment_path(:id => @event), :class => "button"%>
+		<div class="full_right"><p><%= link_to t(".add_comment_button"), add_comment_path(:id => @event), :class => "button"%>
 </div>
 </div>
 
@@ -85,7 +85,7 @@
 	
 <div class="general_container">
 	
-<div class="header_noborder"><p>Replies:</p></div>
+<div class="header_noborder"><p><%= t(".replies")%>:</p></div>
 	
 	
 <% @event.replies.each do |reply| %>
@@ -109,7 +109,7 @@ wrote:<br><%= reply.message %></p></div>
 			
 		<% if reply.approved == false %>
 
-		<%= link_to image_tag("/assets/invite_new.png", :title => "Invite this User to your Event", :rel => "tooltip2"),
+		<%= link_to image_tag("/assets/invite_new.png", :title => t(".invite"), :rel => "tooltip2"),
 			authorize_to_see_path(:id => reply.id) %>
 	
 		<% else %>
@@ -118,12 +118,12 @@ wrote:<br><%= reply.message %></p></div>
 		
 			<% if reply.commit == true %>
 
-			<%= image_tag "/assets/invite_commit.png", :title => "This User takes part at your Event", :rel => "tooltip2" %>
+			<%= image_tag "/assets/invite_commit.png", :title => t(".commit"), :rel => "tooltip2" %>
 
 			<% else %>
 				
 				
-			<%= image_tag "/assets/invite_pending.png", :title => "Waiting for User to commit", :rel => "tooltip2" %>
+			<%= image_tag "/assets/invite_pending.png", :title => t(".pending"), :rel => "tooltip2" %>
 				
 				
 			<% end %>
@@ -152,7 +152,7 @@ wrote:<br><%= reply.message %></p></div>
 	
 <div class="general_container">
 	
-<div class="header_noborder"><p>Comments:</p></div>
+<div class="header_noborder"><p><%= t(".comments")%>:</p></div>
 
 <% @event.comments.each do |comment| %>
 		
@@ -177,14 +177,14 @@ wrote:<br><%= reply.message %></p></div>
 
 	<% if current_user != @event.user && find_current_reply(@event).commit == true %>
 	<div class="footer">
-		<div class="full_right"><p><%= link_to "Add Comment", add_comment_path(:id => @event), :class => "button"%>
+		<div class="full_right"><p><%= link_to t(".add_comment_button"), add_comment_path(:id => @event), :class => "button"%>
 </div>
 	
 </div>
 
 	<% elsif current_user == @event.user %>
 	<div class="footer">
-		<div class="full_right"><p><%= link_to "Add Comment", add_comment_path(:id => @event), :class => "button"%>
+		<div class="full_right"><p><%= link_to t(".add_comment_button"), add_comment_path(:id => @event), :class => "button"%>
 </div>
 	
 </div>

@@ -1,22 +1,22 @@
 <% content_for :no_container do %>
 
-<% provide(:title, "Your Profile:") %>
+<% provide(:title, t(".title")) %>
 
 
 
 <%= form_for @profile, :html => { :multipart => true } do |f| %>
 
   <% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this reply from being saved:</h2>
+    <div class="form_error_container">
+      
+      <p><b><%= t("errors.template.header", count: @profile.errors.count) %> <%= t(:form_error)%></p></b>
 
-      <ul>
-      <% @profile.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <p><% @profile.errors.full_messages.each do |msg| %>
+        <%= msg %></br>
+      <% end %></p>
     </div>
   <% end %>
+  
 
   
 <div class="general_container">
@@ -37,27 +37,27 @@
 				
 				
 				<tr>
-					<td ><%= f.label "Gender:" %></td>
-					<td><%= f.select :gender, [["Male", "Male"], ["Female", "Female"]], :selected => "Male" %></td>
+					<td ><%= f.label t(:gender) %>:</td>
+					<td><%= f.select :gender, [[t(:male), t(:male)], [t(:female), t(:female)]], :selected => t(:male) %></td>
 				</tr>
 				<tr>
-					<td ><%= f.label "Birthday:" %></td>
+					<td ><%= f.label t(:birthday) %>:</td>
 					<td><%= f.date_select :birthday, :start_year => 1960, :end_year => Time.now.year, :use_month_numbers => true %></td>
 				</tr>
 				<tr>
-					<td ><%= f.label "Hometown:" %></td>
+					<td ><%= f.label t(:hometown) %>:</td>
 					<td><%= f.text_field :hometown %></td>
 				</tr>
 				<tr>
-					<td ><%= f.label "Profession:" %></td>
+					<td ><%= f.label t(:profession) %>:</td>
 					<td><%= f.text_field :profession %></td>
 				</tr>
 				<tr>
-					<td ><%= f.label "Hobbies:" %></td>
+					<td ><%= f.label t(:hobbies) %>:</td>
 					<td><%= f.text_field :hobbies %></td>
 				</tr>
 				<tr>
-					<td>Receive E-Mails:</td>
+					<td><%= t(".receive_mails") %></td>
 					<td><%= f.check_box :receive_mails %></td>
 				</tr>
 				
@@ -65,7 +65,7 @@
 			</table>
 			
 			<div class="upload_label">
-				Profile Picture:
+				<%= t(".upload_label")%>
 			</div>
 			<div class="upload">
 		  	<%= f.file_field :avatar %>
@@ -74,11 +74,11 @@
 			
 			
 		    <div class="description">
-				<div class="description_label">About you:</div>
+				<div class="description_label"><%= t(".about_you_label")%></div>
 		      <%= f.text_area :about_you, :size => "10x11" %>
   		    
 			<div class="actions">
-  		      <%= f.submit %>
+  		      <%= f.submit t(:submit)%>
   		    </div>
 		    
 			</div>

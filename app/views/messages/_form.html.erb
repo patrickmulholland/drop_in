@@ -3,7 +3,10 @@
   	
 	
 	<div class="form_error_container">
-      <p><b><%= pluralize(@message.errors.count, "error") %> prohibited this reply from being saved:</p></b>
+      <p><b><%= t("errors.template.header", count: @message.errors.count) %> <%= t(:form_error)%></p></b>
+
+
+
 
       <p><% @message.errors.full_messages.each do |msg| %>
         <%= msg %></br>
@@ -20,9 +23,9 @@
 	
 		  <div class="street">
 
-	      <%= f.label :name %><br />
+	      <%= f.label t(:name) %>:<br />
 	      <%= f.text_field :name %><br />
-	      <%= f.label :email %><br />
+	      <%= f.label t(:email) %>:<br />
 	      <%= f.text_field :email %><br />
 	  </div>
 	  </div>
@@ -30,18 +33,18 @@
 	  <div class="right">
 		  <div class="input">
 		  
-	      <%= f.label :topic %><br />
-	      <%= f.select :topic, [["General", "General"], ["Found a bug", "Found a bug"], ["Report bad User", "Report bad User"]]%><br />
+	      <%= f.label t(:topic) %>:<br />
+	      <%= f.select :topic, [[t(".general"), t(".general")], [t(".report_bug"), t(".report_bug")], [t(".report_user"), t(".report_user")]]%><br />
 	  </div>
 	  </div>
 	  
 	  <div class="bottom">
 		  <div class="details">
 		  
-	      <%= f.label "Your Message:" %><br />
+	      <%= f.label t(".content") %><br />
 	      <%= f.text_area :content, :size => "10x11" %><br />
 	  </div>
-  	<div class="submit"><%= f.submit %></div>
+  	<div class="submit"><%= f.submit t(".submit")%></div>
 	  
 	  </div>
 

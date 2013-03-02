@@ -1,11 +1,12 @@
 <%= form_for(@rating) do |f| %>
   <% if @rating.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this reply from being saved:</h2>
-
-
-    	<div class="form_error_container">
-          <p><b><%= t("errors.template.header", count: @rating.errors.count) %> <%= t(:form_error)%></p></b>
+  
+  
+  
+  
+  
+	<div class="form_error_container">
+      <p><b><%= t("errors.template.header", count: @rating.errors.count) %> <%= t(:form_error)%></p></b>
 
           <p><% @rating.errors.full_messages.each do |msg| %>
             <%= msg %></br>
@@ -14,7 +15,6 @@
       <% end %>
   
 
-  
   
   <div class="form_container">
 

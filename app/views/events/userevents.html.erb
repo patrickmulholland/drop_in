@@ -1,10 +1,10 @@
 
 <% content_for :no_container do %>
 
-<% provide(:title, "Showing Users Events:") %>
+<% provide(:title, t(".title")) %>
 
 
-<div class="head_container"><div class="full"><p><%= @users_replies.first.user.name %> took part on these Events:</p></div></div>
+<div class="head_container"><div class="full"><p><%= @users_replies.first.user.name %> <%= t(".took_part_on") %></p></div></div>
 
 <% @users_replies.each do |reply| %>
 

@@ -3,7 +3,7 @@ class Rating < ActiveRecord::Base
   belongs_to :user  
   has_one :event
   
-  validates :comment, :length => {:maximum => 500}, :presence => true
+  validates :comment, :length => {:maximum => 500}
   
   
 end

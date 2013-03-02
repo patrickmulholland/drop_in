@@ -50,3 +50,10 @@ can happen. Simply click
 <p>Why not reply to a new one? You know how it works. Simply <%= link_to "click here", by_date_path %> and reply to one you like.</p>
 <p>Alternatively you can as always <%= link_to "create your own Event", new_event_path %>.</p>
 <% end %>
+
+<% content_for :no_events_created do %>
+<p><b>You haven't created any Events yet.</b></p>
+<p><%= link_to "Click here", new_event_path %> and quickly create one. Users
+	can reply on your event and you can decide if you want to invite them.</p>
+<p>If you don't know what to do, <%= link_to "look here", by_date_path %> for inspiration and click on the reply button to take part at other users events.</p>
+<% end %>

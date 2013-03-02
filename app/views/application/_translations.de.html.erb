@@ -1,7 +1,7 @@
 
 <% content_for :no_events_at_all do %>
 
-<p><b>Momentan gibt es keine Events.</b></p> <p>Dei der erste der einen <%= link_to "ertellt",
+<p><b>Momentan gibt es keine Events.</b></p> <p>Sei der erste der einen <%= link_to "erstellt",
 new_event_path %> und lass andere Nutzer daran teilnehmen.</p>
 
 <% end %>
@@ -49,4 +49,11 @@ aber mal vorkommen. Klicke einfach
 <p><b>Du hast momentan auf keine Events geantwortet.</b></p>
 <p>Warum suchst du dir nicht einfach einen neuen? Du weißt wie es geht - <%= link_to "klicke hier", by_date_path %> und antworte auf einen den du magst.</p>
 <p>Alternativ kannst du natürlich wie immer <%= link_to "deinen eigenen Event erstellen", new_event_path %></p>
+<% end %>
+
+
+<% content_for :no_events_created do %>
+<p><b>Du hast momentan keine Events gestartet.</b></p>
+<p><%= link_to "Klicke hier", new_event_path %> und erstelle einfach einen. Nutzer können darauf antworten und du kannst entscheiden ob du sie einladen möchtest.</p>
+<p>Wenn du gerade nicht weißt, was du machen möchtest, <%= link_to "schau mal hier", by_date_path %> und antworte einfach auf einen Event eines anderen Users.</p>
 <% end %>

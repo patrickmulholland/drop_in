@@ -3,15 +3,13 @@
   	
 	
 	<div class="form_error_container">
-      <p><b><%= pluralize(@comment.errors.count, "error") %> prohibited this reply from being saved:</p></b>
+      <p><b<%= t("errors.template.header", count: @comment.errors.count) %> <%= t(:form_error)%></p></b>
 
-      <p><% @comment.errors.full_messages.each do |msg| %>
-        <%= msg %></br>
-      <% end %></p>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
     </div>
   <% end %>
-  
-  
   
   
   <div class="form_container">
@@ -22,12 +20,12 @@
     <%= f.hidden_field :event_id %>
 	
 
-    <%= f.label "Your Comment:" %><br />
+    <%= f.label t(".your_comment") %><br />
     <%= f.text_area :content, :size => "10x11" %>
 
 	<div class="default_submit">
 		<div class="actions">
-    <%= f.submit %></div>
+    <%= f.submit t(".submit")%></div>
 </div>
 		</div>
 	</div>

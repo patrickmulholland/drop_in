@@ -1,5 +1,5 @@
 
-<% provide(:title, "Sign in") %>
+<% provide(:title, t(".title")) %>
 
 
 <% content_for :no_container do %>
@@ -12,10 +12,10 @@
 
 <div class ="form_container">
 
- 	<div class="left_signup"><%= f.label :email %></div>
+ 	<div class="left_signup"><%= f.label t(:email) %></div>
 	<div class="right_signup"><%= f.email_field :email, :autofocus => true %></div>
   
-  <div class="footer_center"><div class="actions"><%= f.submit "Send me reset password instructions" %></div></div>
+  <div class="footer_center"><div class="actions"><%= f.submit t(".submit") %></div></div>
 <% end %>
 
 

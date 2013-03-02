@@ -5,14 +5,144 @@ de:
 
   wrote: "schrieb"
   reply: "Antworten"
+  submit: "Abschicken"
   welcome: "Willkommen"
+  show: "Anzeigen"
+  edit: "Bearbeiten"
+  delete: "Löschen"
+  standard_confirm: "Bist du dir sicher?"
+  update_sucess: "Event wurde erfolgreich erstellt."
+  event_deleted: "Event wurde erfolgreich gelöscht."
+  
+  invalid_combi: "Falsche E-Mail / Passwort Kombination"
+  allowed_all: "Sie haben den User erfolgreich eingeladen."
+  error: "Irgendwas lief falsch -> drücke auf found-ab-bug"
+  reply_update: "Reply wurde aktualisiert."
+  reply_created: "Reply wurde erstellt."
   
   form_error: " das Senden dieses Formulares:"
-  comment_blank: "Kommentar darf nicht leer sein"
-  comment_created: "Kommentar wurde erstellt."
-  rating_wrong: "Beim Bewerten lief etwas schief."
-  rating_created: "Nutzer wurde erfolgreich Bewertet."
   
+  rating_created: "Nutzer wurde erfolgreich Bewertet."
+  rating_wrong: "Beim Bewerten lief etwas schief."
+  rating_comment_created: "Kommentar wurde erstellt."
+  rating_comment_blank: "Kommentar darf nicht leer sein."
+  
+  name: "Name"
+  email: "E-Mail"
+  topic: "Thema"
+  gender: "Geschlecht"
+  male: "Mann"
+  female: "Frau"
+  birthday: "Geburtstag"
+  hometown: "Heimatstadt"
+  profession: "Beruf"
+  hobbies: "Hobbies"
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              confirmation: "Bestätigung ist falsch"
+              too_short: "ist zu kurz"
+            email:
+              taken: "wird schon verwendet."
+      messages:
+        blank: "darf nicht leer sein."
+        invalid: "ist keine gültige E-Mail-Adresse."
+        too_long: "ist zu lang."
+        not_saved:
+
+    models:
+      reply: "Antwort"
+    attributes:
+      user:
+        password: "Passwort"
+        confirmation: "Bestätigung"
+        current_password: "Derzeitiges Passwort"
+
+      reply:
+        message: "Antwort"
+      message:
+        name: "Name"
+        content: "Nachricht"
+        email: "E-Mail"
+      event:
+        short_description: "Kurzbeschreibung"
+        date: "Datum"
+        street: "Straße"
+        details: "Details"
+      profile:
+        hometown: "Heimatstadt"
+        profession: "Beruf"
+        hobbies: "Hobbies"
+        about_you: "Über dich"
+      comment:
+        content: "Kommentar"
+
+  errors:
+    template:
+      body: "test"
+      header:
+        one: "1 Fehler verhinderte"
+        other: "%{count} Fehler verhinderten"
+
+  date:
+    abbr_day_names:
+    - So
+    - Mo
+    - Di
+    - Mi
+    - Do
+    - Fr
+    - Sa
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mär
+    - Apr
+    - Mai
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Okt
+    - Nov
+    - Dez
+    day_names:
+    - Sonntag
+    - Montag
+    - Dienstag
+    - Mittwoch
+    - Donnerstag
+    - Freitag
+    - Samstag
+    formats:
+      default: ! '%d.%m.%Y'
+      long: ! '%e. %B %Y'
+      short: ! '%e. %b'
+    month_names:
+    - 
+    - Januar
+    - Februar
+    - März
+    - April
+    - Mai
+    - Juni
+    - Juli
+    - August
+    - September
+    - Oktober
+    - November
+    - Dezember
+    order:
+    - :day
+    - :month
+    - :year
+
+
 
   layouts:
     application:
@@ -27,6 +157,8 @@ de:
     by_date:
       title: "Alle Events nach Datum:"
       events_today: "Events heute:"
+      replies: "Anfragen"
+      commits: "Zusagen"
 
     help:
       title: "Hilfe:"
@@ -64,7 +196,90 @@ de:
       invited_replies: "Events zu denen du eingeladen wurdest:"
       commited_replies: "Events zu denen du zugesagt hast:"
   
+  ratings:
+    edit:
+      title: "Dein Kommentar:"
+    form:
+      your_comment: "Dein Kommentar:"
+      submit_comment: "Kommentar abschicken"
+
+  profiles:
+    new:
+      already_have_one: "Du hast schon ein Profil."
+    form:
+      title: "Erstelle dein Profil:"
+      receive_mails: "E-Mails empfangen?"
+      upload_label: "Profilbild ändern:"
+      about_you_label: "Über dich:"
+      
+  users:
+    show:
+      member_since: "Mitglied seit:"
+      took_part_on: "Nahm teil an:"
+      events: " Events"
+      no_events: "Bisher keinen Events"
+      no_profile_details: "Keine Beschreibung verfügbar."
+      about_me: "Über mich:"
+      create_profile: "Erstelle Profil"
+      edit_profile: "Bearbeite Profil"
+      edit_login: "Bearbeite Login"
+      
+      ratings: "Bewertungen:"
+      nice: "Super!"
+      ok: "War&nbsp;gut."
+      not_again: "Nicht&nbsp;nochmal!"
+    
+  messages:
+    new:
+      title: "Neue Nachricht:"
+    form:
+      general: "Allgemein"
+      report_bug: "Fehler melden"
+      report_user: "User melden"
+      submit: "Nachricht senden"
+      content: "Deine Nachricht:"
+      
   events:
+    userevents:
+      title: "Teilgenommene Events:"
+      took_part_on: "nahm an diesen Events teil:"
+    
+    show:
+      title: "Zeige Event:"
+      commit_button: "Ich werde da sein!"
+      uncommit_button: "Ich kann doch nicht!"
+      uncommit_confirmation: "Bist du dir sicher, dass du nicht kannst?"
+      add_comment_button: "Neuer Kommentar"
+      replies: "Anfragen"
+      invite: "Lade den User ein!"
+      commit: "Dieser User nimmt teil!"
+      pending: "Wartet noch auf Zusage."
+      comments: "Kommentare"
+    
+    index:
+      title: "Deine Events:"
+      create_new: "Event erstellen"
+      your_events: "Deine Events:"
+      new_replies: "Neue Antworten"
+      new_commits: "Neue Zusagen"
+      new_comments: "Neue Kommentare"
+      number_of_replies: "Anfragen"
+      number_of_commits: "Zusagen"
+      past_events: "Vergangene Events:"
+      rate_users: "User bewerten"
+      comment_users: "Kommentare hinzufügen"
+    
+    form:
+      title: "Neuen Event erstellen:"
+      brief_description: "Beschreibe kurz was du machen möchtest:"
+      when: "Wann"
+      at: "Um"
+      visible_notice: "Nur sichtbar für eingeladenen Nutzer"
+      street: "Straße: (momentan nur münchener adressen!)"
+      meeting_point: "Treffpunkt:"
+      details: "Details:"
+      submit: "Erstelle Event"
+      
     rate_users:
       title: "Bewerte und Kommentiere User:"
       head: "Bewerte die Teilnehmer des Events - "
@@ -73,27 +288,67 @@ de:
       not_again: "Nicht nochmal."
       didnt_show: "War nicht da!"
       add_comment: "Kommentar hinzufügen"
-  
-  ratings:
-    edit:
-      title: "Dein Kommentar:"
+      
+  comments:
+    new:
+      title: "Neuer Kommentar:"
     form:
       your_comment: "Dein Kommentar:"
-      submit_comment: "Kommentar abschicken"
+      submit: "Kommentar erstellen"
+  
+  devise:
+    confirmations:
+      new:
+        title: "Bestätigungs E-Mail nochmal senden:"
+        submit: "Bestätigungs E-Mail nochmal senden"
+    passwords:
+      new:
+        title: "Neues Passwort zusenden:"
+        submit: "Schicke mir Anweisungen zum Passwort-Reset"
+      edit:
+        title: "Neues Passwort zusenden:"
+        new_password: "Neues Passwort:"
+        confirm_password: "Passwort bestätigen:"
+        submit: "Speichern"
+    registrations:
+      new:
+        title: "Melde dich an:"
+        name: "Name:"
+        email: "E-Mail:"
+        password: "Passwort:"
+        confirmation: "Bestätigung:"
+        submit: "Anmelden"
+      edit:
+        title: "Melde dich an:"
+        waiting_for_email: "Warte auf Bestätigung von: "
+        name: "Name:"
+        email: "E-Mail:"
+        password: "Neues Passwort:"
+        current_password: "Altes Passwort:"
+        confirmation: "Bestätigung:"
+        submit: "Anmelden"
+        password_leave_blank: "Leer lassen falls es so bleiben soll."
+        old_password_needed: "Wir brauchen dein altes passwort als bestätigung."
+        cancel_account: "Lösche Account"
+        sure: "Willst du deinen Account wirklich löschen?"
+        submit: "Aktualisieren"
+    sessions:
+      new:
+        title: "Einloggen:"
+        email: "E-Mail:"
+        password: "Passwort:"
+        remember_me: "Daten merken"
+        forgot_password: "Passwort vergessen?"
+        submit: "Einloggen"
+      user:
+        signed_out: "Sie haben sich erfolgreich abgemeldet."
+        signed_in: "Willkommen bei Drop-in"
+        
+
+
+
+
+
+
       
       
-  activerecord:
-    errors:
-      messages:
-        blank: "kann nicht leer sein."
-    models:
-      reply: "Antwort"
-    attributes:
-      reply:
-        message: "Antwort"
-  errors:
-    template:
-      body: "test"
-      header:
-        one: "1 Fehler verhinderte"
-        other: "%{count} Fehler verhinderten"

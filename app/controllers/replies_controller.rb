@@ -73,9 +73,9 @@ class RepliesController < ApplicationController
       
       
       
-      redirect_to events_path, notice: "You sucessfully allowed the user to see all."
+      redirect_to events_path, notice: t(:allowed_all)
     else
-      redirect_to events_path, notice: "Something went wrong."
+      redirect_to events_path, notice: t(:error)
     end
   end
 
@@ -97,7 +97,7 @@ class RepliesController < ApplicationController
           
         end
         
-        format.html { redirect_to replies_path, notice: 'Reply was successfully created.' }
+        format.html { redirect_to replies_path, notice: t(:reply_created) }
       else
         format.html { render action: "new" }
       end
@@ -111,7 +111,7 @@ class RepliesController < ApplicationController
 
     respond_to do |format|
       if @reply.update_attributes(params[:reply])
-        format.html { redirect_to @reply, notice: 'Reply was successfully updated.' }
+        format.html { redirect_to @reply, notice: t(:reply_update) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_to by_date_path
     else
-      flash.now[:error] = 'Invalid email/password combination' # Not quite right!
+      flash.now[:error] = t(:invalid_combi) # Not quite right!
       render 'new'
     end
   end

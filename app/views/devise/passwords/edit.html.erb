@@ -1,5 +1,5 @@
 
-<% provide(:title, "Sign in") %>
+<% provide(:title, t(".title")) %>
 
 
 <% content_for :no_container do %>
@@ -21,8 +21,8 @@
 
 
 <div class="left_signup">
-	<%= f.label :password, "New password" %>
-	<%= f.label :password_confirmation, "Confirm new password" %>
+	<%= f.label :password, t(".new_password") %>
+	<%= f.label :password_confirmation, t(".confirm_password") %>
 </div>
 
 <div class="right_signup">
@@ -31,7 +31,7 @@
 </div>
 
  
-<div class="footer_center"><%= f.submit "Change my password" %></div>
+<div class="footer_center"><%= f.submit t(".submit") %></div>
  
  
 <% end %>

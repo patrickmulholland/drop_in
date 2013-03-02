@@ -6,7 +6,8 @@ class RatingsController < ApplicationController
     @rating = Rating.new  
     @rating.user_id = @user.id  
     @rating.event_id = params[:event_id] 
-    @rating.result = params[:result]   
+    @rating.result = params[:result]
+     
                                       
     @event = Event.find(params[:event_id]) #event finden zu dem man zurückleitet
      if @rating.save
@@ -29,13 +30,19 @@ class RatingsController < ApplicationController
     @rating = Rating.find(params[:id])
     @event_id = @rating.event_id
 
-    respond_to do |format|
+
       if @rating.update_attributes(params[:rating])
-        format.html { redirect_to rate_users_path(:id => @event_id), notice: t(".comment_created") }
+        if @rating.comment.blank?
+          @rating.comment = nil
+          @rating.save
+          redirect_to rate_users_path(:id => @event_id), notice: t(".rating_comment_blank")
+        else
+          redirect_to rate_users_path(:id => @event_id), notice: t(".rating_comment_created")
+        end
       else
-        redirect_to edit_ratings_path(:id => @event_id)
+        redirect_to edit_ratings_path(:id => @event_id), notice: "Error - Report Bug!!!"
       end
-    end
+    
   end
    
          
