@@ -11,9 +11,9 @@ class RatingsController < ApplicationController
                                       
     @event = Event.find(params[:event_id]) #event finden zu dem man zurückleitet
      if @rating.save
-       redirect_to rate_users_path(:id => @event), notice: t(".rating_created")
+       redirect_to rate_users_path(:id => @event), notice: t(:rating_created)
       else
-        redirect_to rate_users_path(:id => @event), notice: t(".rating_wrong")
+        redirect_to rate_users_path(:id => @event), notice: t(:rating_wrong)
         
        
      end
@@ -35,12 +35,12 @@ class RatingsController < ApplicationController
         if @rating.comment.blank?
           @rating.comment = nil
           @rating.save
-          redirect_to rate_users_path(:id => @event_id), notice: t(".rating_comment_blank")
+          redirect_to rate_users_path(:id => @event_id), notice: t(:rating_comment_blank)
         else
-          redirect_to rate_users_path(:id => @event_id), notice: t(".rating_comment_created")
+          redirect_to rate_users_path(:id => @event_id), notice: t(:rating_comment_created)
         end
       else
-        redirect_to edit_ratings_path(:id => @event_id), notice: "Error - Report Bug!!!"
+        redirect_to edit_ratings_path(:id => @event_id), notice: t(:rating_bug)
       end
     
   end

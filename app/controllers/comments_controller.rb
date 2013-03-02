@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
         end
             
  
-        redirect_to @event, notice: 'Comment was successfully created.'
+        redirect_to @event, notice: t(:comment_created)
       else
          render action: "new"
       end

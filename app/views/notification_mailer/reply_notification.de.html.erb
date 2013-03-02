@@ -4,19 +4,19 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Hello <%= @receiver %></h1>
+    <h1>Hallo <%= @receiver %></h1>
 	
-	<p>You have a new reply to the following Event:</p>
+	<p>Du hast eine neue Anfrage von <%= @sender %> zu folgendem Event:</p>
 	<p><%= @event_short_desc %></p>
 	
 	<p>&nbsp;</p>
 	
-    <p>User <%= @sender %> replied:</p>
+    <p>Er schrieb:</p>
 	<p><%= @message %></p>
 	
 	<p>&nbsp;</p>
 	
-	<p>Click ---here--- to go to the site...</p>
+	<p>Schau gleich vorbei unter: <a href="http://drop-in.herokuapp.com">Drop.in</a></p>
 	
   </body>
 </html>

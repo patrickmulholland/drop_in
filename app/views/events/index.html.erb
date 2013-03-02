@@ -30,7 +30,7 @@
 	
 	<div class="header">
 		
-		<div class="left"><p><%= event.date %></p></div>
+		<div class="left"><p><%= l event.date, :format => "%A, %d.%m:"%></p></div>
 	
 	<div class="right">
 		<p>
@@ -88,7 +88,8 @@
 	
 	<div class="header">
 		
-		<div class="left"><p><%= event.date %></p></div>
+		<div class="left"><p><%= l event.date, :format => "%A, %d.%m:" %></p></div>
+        
 	
 	<div class="right"><p><% if count_new_replies_for_event(event) > 0%><b class="counter"><%= count_new_replies_for_event(event) %> <%= t(".new_replies")%></b><%end%><% if count_new_commits_for_event(event) > 0%><b class="counter"><%= count_new_commits_for_event(event) %> <%= t(".new_commits")%></b><% end %><% if count_new_replies_for_event(event) == 0 && count_new_commits_for_event(event) == 0%> &nbsp;<% end %></p></div></div>
 

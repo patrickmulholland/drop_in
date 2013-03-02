@@ -73,9 +73,9 @@ class RepliesController < ApplicationController
       
       
       
-      redirect_to events_path, notice: t(:allowed_all)
+      redirect_to events_path, notice: t(:reply_allow)
     else
-      redirect_to events_path, notice: t(:error)
+      redirect_to events_path, notice: t(:reply_error)
     end
   end
 

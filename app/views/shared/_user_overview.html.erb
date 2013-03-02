@@ -32,7 +32,7 @@
 	<% end %>
 	
 	<% if count_new_comments_for_events(current_user.events) > 0 %>
-	<br /><div class="counter"><%= t(".new_comments", count: count_new_comments_for_events(current_user.events)) %></div>
+	<div class="counter"><%= t(".new_comments", count: count_new_comments_for_events(current_user.events)) %></div>
 	<% end %>
 	
 	

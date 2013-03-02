@@ -26,7 +26,7 @@
 <% if event.date.today? %>
 	<p><%= t(".events_today")%></p></div></div>
 <% else %>
-	<p><%= event.date.strftime("%A, %d") %>:</p></div></div>
+	<p><%= l event.date, :format => "%A, %d.%m" %>:</p></div></div>
 <% end%>
 <% end %>
 

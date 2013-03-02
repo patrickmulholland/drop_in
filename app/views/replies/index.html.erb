@@ -37,10 +37,11 @@
 <div class="general_container">
 
 	<div class="header">
-		<div class="left"><p><%= reply.event.date %></p></div>
+		<div class="left"><p><%= l reply.event.date, :format => "%A, %d.%m:" %></p></div>
+        
 		<div class="right">
 			<p><% if reply.approved == true && reply.looked_at_invitation == false %>
-			<b class="counter">New</b><% else %>&nbsp;<% end %></p>
+			<b class="counter"><%= t(:new) %></b><% else %>&nbsp;<% end %></p>
 		</div>
 	</div>
 
@@ -51,7 +52,7 @@
 	<div class="footer">
 		<div class="left"><p>&nbsp;</p></div>
 		<div class="right">
-			<p><%= link_to "Show", reply.event if reply.approved == true %></p>
+			<p><%= link_to t(:show), reply.event if reply.approved == true %></p>
 		</div>
 	</div>
 
@@ -76,10 +77,10 @@
 <div class="general_container">
 
 	<div class="header">
-		<div class="left"><p><%= reply.event.date %></p></div>
+		<div class="left"><p><%= l reply.event.date, :format => "%A, %d.%m:" %></p></div>
 		<div class="right">
 			<p><% if reply.approved == true && reply.looked_at_invitation == false %>
-			<b class="counter">New</b><% else %>&nbsp;<% end %></p>
+			<b class="counter"><%= t(:new) %></b><% else %>&nbsp;<% end %></p>
 		</div>
 	</div>
 
@@ -90,7 +91,7 @@
 	<div class="footer">
 		<div class="left"><p>&nbsp;</p></div>
 		<div class="right">
-			<p><%= link_to "Show", reply.event if reply.approved == true %></p>
+			<p><%= link_to t(:show), reply.event if reply.approved == true %></p>
 		</div>
 	</div>
 
@@ -116,7 +117,7 @@
 <div class="general_container">
 
 	<div class="header">
-		<div class="left"><p><%= reply.event.date %></p></div>
+		<div class="left"><p><%= l reply.event.date, :format => "%A, %d.%m:" %></p></div>
 		<div class="right">
 			<p>&nbsp;</p>
 		</div>
@@ -129,7 +130,7 @@
 	<div class="footer">
 		<div class="left"><p>&nbsp;</p></div>
 		<div class="right">
-			<p><%= link_to "Show", reply.event if reply.approved == true %></p>
+			<p><%= link_to t(:show), reply.event if reply.approved == true %></p>
 		</div>
 	</div>
 

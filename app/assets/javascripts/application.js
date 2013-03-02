@@ -17,8 +17,19 @@
 
 
 $(function (){
-	$('#event_date').datepicker({ dateFormat: 'yy-mm-dd' });
+	$('#event_date').datepicker({
+    dateFormat: 'yy-mm-dd',
+    firstDay: 1,
+          minDate: 0,
+          closeText: 'Kalender schließen',
+          currentText: 'Heute',
+          dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+          dayNamesMin: ['SO', 'MO', 'DI', 'MI', 'DO', 'FR', 'SA'],
+          monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 
+            'Juni', 'Juli', 'August', 'September', 'Oktober',  'November', 'Dezember'],
+  });
 });
+
 
 
 $( document ).ready( function()

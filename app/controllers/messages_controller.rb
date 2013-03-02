@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
       
       if @message.save
         NotificationMailer.contact_form(@message).deliver
-        redirect_to root_path, notice: 'Email was successfully sent!'
+        redirect_to root_path, notice: t(:message_sent)
       else
          render action: "new"
       end

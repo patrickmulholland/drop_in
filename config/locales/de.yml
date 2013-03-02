@@ -3,30 +3,69 @@
 
 de:
 
+#Controller:
+  #replies
+  reply_allow: "Sie haben den User erfolgreich eingeladen."
+  reply_error: "Irgendwas lief falsch -> drücke auf found-ab-bug"
+  reply_update: "Anfrage wurde aktualisiert."
+  reply_created: "Anfrage wurde erstellt."
+  
+  #ratings
+  rating_created: "Nutzer wurde erfolgreich Bewertet."
+  rating_wrong: "Beim Bewerten lief etwas schief."
+  rating_comment_created: "Kommentar wurde erstellt."
+  rating_comment_blank: "Kommentar darf nicht leer sein."
+  rating_bug: "Irgendwas lief schief -> drücke auf found a bug"
+  
+  #profiles
+  profile_created: "Profile wurde erfolgreich erstellt."
+  profile_updated: "Profil wurde erfolgreich aktualisiert."
+  
+  #messages
+  message_sent: "Nachricht wurde erfolgreich verschickt."
+  
+  #events
+  event_commited: "Erfolgreich zugesagt."
+  event_error: "Irgendwas lief schief."
+  event_uncommited: "Erfolgreich abgesagt."
+  event_created: "Event wude erfolgreich erstellt."
+  event_updated: "Event wurde erfolgreich geändert."
+  event_deleted: "Event wurde erfolgreich gelöscht."
+  
+  #comments
+  comment_created: "Kommentar erfolgreich erstellt."
+  
+  #sessions
+  invalid_combination: "Falsche E-Mail / Passwort Kombination"
+  
+  
+#Mailer:
+  notification_mailer:
+    contact_form:
+      subject: "Drop.in - Kontaktformular"
+    reply_notification:
+      subject: "Drop.in - Du hast eine neue Anfrage!"
+    invitation_notification:
+      subject: "Drop.in - Du wurdest eingeladen!"
+    commit_notification:
+      subject: "Drop.in - Ein User hat zugesagt!"
+    comment_notification:
+      subject: "Drop.in - Du wurdest bewertet!"
+      
+#will_paginate:
+  will_paginate:
+    previous_label: "&#8592; Vorherige"
+    next_label: "Nächste &#8594;"
+    
+#Allgemein:
+
   wrote: "schrieb"
-  reply: "Antworten"
+  reply: "Anfragen"
   submit: "Abschicken"
   welcome: "Willkommen"
   show: "Anzeigen"
   edit: "Bearbeiten"
   delete: "Löschen"
-  standard_confirm: "Bist du dir sicher?"
-  update_sucess: "Event wurde erfolgreich erstellt."
-  event_deleted: "Event wurde erfolgreich gelöscht."
-  
-  invalid_combi: "Falsche E-Mail / Passwort Kombination"
-  allowed_all: "Sie haben den User erfolgreich eingeladen."
-  error: "Irgendwas lief falsch -> drücke auf found-ab-bug"
-  reply_update: "Reply wurde aktualisiert."
-  reply_created: "Reply wurde erstellt."
-  
-  form_error: " das Senden dieses Formulares:"
-  
-  rating_created: "Nutzer wurde erfolgreich Bewertet."
-  rating_wrong: "Beim Bewerten lief etwas schief."
-  rating_comment_created: "Kommentar wurde erstellt."
-  rating_comment_blank: "Kommentar darf nicht leer sein."
-  
   name: "Name"
   email: "E-Mail"
   topic: "Thema"
@@ -37,6 +76,10 @@ de:
   hometown: "Heimatstadt"
   profession: "Beruf"
   hobbies: "Hobbies"
+  new: "Neu"
+  
+  standard_confirm: "Bist du dir sicher?"
+  form_error: " das Senden dieses Formulares:"
 
   activerecord:
     errors:
@@ -52,7 +95,7 @@ de:
         blank: "darf nicht leer sein."
         invalid: "ist keine gültige E-Mail-Adresse."
         too_long: "ist zu lang."
-        not_saved:
+        not_found: "nicht erkannt."
 
     models:
       reply: "Antwort"
@@ -87,6 +130,8 @@ de:
       header:
         one: "1 Fehler verhinderte"
         other: "%{count} Fehler verhinderten"
+        
+        
 
   date:
     abbr_day_names:
@@ -189,8 +234,8 @@ de:
     new:
       title: "Auf Event antworten:"
     form:
-      your_reply: "Deine Antwort:"
-      submit: "Antwort erstellen"
+      your_reply: "Deine Anfrage:"
+      submit: "Anfrage senden"
     index:
       waiting_replies: "Wartet auf Einladung:"
       invited_replies: "Events zu denen du eingeladen wurdest:"
@@ -259,7 +304,7 @@ de:
     index:
       title: "Deine Events:"
       create_new: "Event erstellen"
-      your_events: "Deine Events:"
+      your_events: "Deine Events"
       new_replies: "Neue Antworten"
       new_commits: "Neue Zusagen"
       new_comments: "Neue Kommentare"
@@ -270,7 +315,7 @@ de:
       comment_users: "Kommentare hinzufügen"
     
     form:
-      title: "Neuen Event erstellen:"
+      title: "Dein Event:"
       brief_description: "Beschreibe kurz was du machen möchtest:"
       when: "Wann"
       at: "Um"
@@ -278,7 +323,7 @@ de:
       street: "Straße: (momentan nur münchener adressen!)"
       meeting_point: "Treffpunkt:"
       details: "Details:"
-      submit: "Erstelle Event"
+      submit: "Abschicken"
       
     rate_users:
       title: "Bewerte und Kommentiere User:"

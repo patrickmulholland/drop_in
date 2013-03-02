@@ -13,7 +13,7 @@ def create # wird nicht angezeigt. ist nur zum controllen "post"
   @profile = Profile.new(params[:profile])
 
     if @profile.save
-      redirect_to @profile.user, notice: 'Profile was successfully created.'
+      redirect_to @profile.user, notice: t(:profile_create)
     else
       render action: "new"
     end
@@ -28,7 +28,7 @@ def create # wird nicht angezeigt. ist nur zum controllen "post"
     @profile = Profile.find(params[:id])
 
       if @profile.update_attributes(params[:profile])
-        redirect_to @profile.user, notice: 'Profile was successfully updated.'
+        redirect_to @profile.user, notice: t(:profile_updated)
       else
         render action: "edit"
       end

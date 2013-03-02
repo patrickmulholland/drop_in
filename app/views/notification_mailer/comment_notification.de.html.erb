@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Hallo <%= @receiver %></h1>
+	
+	<p>User <%= @sender %> kommentierte diesen Event:</p>
+	<p><%= @event_short_desc %></p>
+	
+	<p>&nbsp;</p>
+	
+	<p>Er schrieb: <%= @content %></p>
+	
+	<p>&nbsp;</p>
+	
+	<p>Schau gleich vorbei unter: <a href="http://drop-in.herokuapp.com">Drop.in</a></p>
+	
+  </body>
+</html>

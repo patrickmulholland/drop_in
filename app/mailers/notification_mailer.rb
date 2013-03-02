@@ -7,7 +7,7 @@ class NotificationMailer < ActionMailer::Base
     @message = reply.message
     @event_short_desc = reply.event.short_description
     
-    mail(:to => reply.event.user.email, :subject => "Drop.in - You have a new Reply to one of your Events")
+    mail(:to => reply.event.user.email)
   end
   
   def invitation_notification(reply)
@@ -15,7 +15,7 @@ class NotificationMailer < ActionMailer::Base
     @receiver = reply.user.name
     @event_short_desc = reply.event.short_description
     
-    mail(:to => reply.user.email, :subject => "Drop.in - You have a new Invitation waiting")
+    mail(:to => reply.user.email)
   end
   
   def commit_notification(reply)
@@ -24,7 +24,7 @@ class NotificationMailer < ActionMailer::Base
     @message = reply.message
     @event_short_desc = reply.event.short_description
     
-    mail(:to => reply.event.user.email, :subject => "Drop.in - You have a new Commit to one of your Events")
+    mail(:to => reply.event.user.email)
   end
   
   def comment_notification(comment)
@@ -33,7 +33,7 @@ class NotificationMailer < ActionMailer::Base
     @content = comment.content
     @event_short_desc = comment.event.short_description
     
-    mail(:to => comment.event.user.email, :subject => "Drop.in - You have a new Comment on one of your Events")
+    mail(:to => comment.event.user.email)
   end
   
   def contact_form(message)
@@ -42,7 +42,7 @@ class NotificationMailer < ActionMailer::Base
     @email = message.email
     @content = message.content
   
-    mail(:to => "patrick.mulholland@gmx.de", :subject => "Drop.in - Contact Form")
+    mail(:to => "patrick.mulholland@gmx.de")
   end
   
 end

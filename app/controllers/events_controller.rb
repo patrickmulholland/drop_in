@@ -88,9 +88,9 @@ class EventsController < ApplicationController
       
 
       
-      redirect_to replies_path, notice: "Successfully Commited"
+      redirect_to replies_path, notice: t(:event_commited)
     else
-      redirect_to replies_path, notice: "Something wrong!"
+      redirect_to replies_path, notice: t(:event_error)
     end
   end
   
@@ -99,9 +99,9 @@ class EventsController < ApplicationController
     @reply = Reply.where(:user_id => current_user, :event_id => @event).first
     @reply.commit = false
     if @reply.save
-      redirect_to replies_path, notice: "Successfully Un-Commited"
+      redirect_to replies_path, notice: t(:event_uncommited)
     else
-      redirect_to replies_path, notice: "Something wrong!"
+      redirect_to replies_path, notice: t(:event_error)
     end
   end
   
@@ -125,7 +125,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to @event, notice: t(:event_created) }
         format.json { render json: @event, status: :created, location: @event }
       else
         format.html { render action: "new" }
@@ -144,7 +144,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
-        format.html { redirect_to @event, notice: t(:update_sucess) }
+        format.html { redirect_to @event, notice: t(:event_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
