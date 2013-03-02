@@ -50,6 +50,9 @@ Twitter::Application.configure do
 
   #mailer:
   config.action_mailer.default_url_options = { :host => 'drop-in.herokuapp.com' }
+  
+  #paperclip
+  
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

@@ -12,6 +12,8 @@ gem 'will_paginate'
 
 gem "paperclip", "~> 3.0"
 
+gem "paperclip-dropbox"
+
 gem "geocoder"
 gem "bhm-google-maps"
 

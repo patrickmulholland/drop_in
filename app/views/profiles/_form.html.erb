@@ -25,7 +25,11 @@
 		
   		<div class="left">
 			
+        <% unless @profile.avatar.blank? %>
   			<%= image_tag @profile.avatar.url(:big) %>
+        <% else %>
+        <%= image_tag "/avatars/big/missing.png"%>
+        <% end %>
   			
   		</div>
 			

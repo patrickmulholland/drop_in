@@ -42,7 +42,6 @@ Twitter::Application.configure do
   #Set Paperclip Path
   Paperclip.options[:command_path] = "/usr/local/bin/"
   
-  
   #action_mailer:
   
 
