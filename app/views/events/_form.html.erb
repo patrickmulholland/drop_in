@@ -29,9 +29,14 @@
   
   <div class="form_container">
 	  
+ 
+    
 	  <div class="left">
+      
+      <%= f.label t(".event_title") %>
+      <%= f.text_field :title %>
 
-    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :user_id %>    
 
   <div class="textarea">
     <%= f.label t(".brief_description") %><br />
@@ -40,6 +45,7 @@
   
 </div>
 <div class="right">
+  
   <div class="input">
     <%= f.label t(".when") %>:<br />
     <%= f.text_field :date %>

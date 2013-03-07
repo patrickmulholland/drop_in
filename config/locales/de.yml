@@ -318,6 +318,7 @@ de:
     
     form:
       title: "Dein Event:"
+      event_title: "Titel:"
       brief_description: "Beschreibe kurz was du machen möchtest:"
       when: "Wann"
       at: "Um"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130301144710) do
+ActiveRecord::Schema.define(:version => 20130307062232) do
 
   create_table "comments", :force => true do |t|
     t.integer "event_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20130301144710) do
     t.float    "longitude"
     t.string   "meeting_point"
     t.string   "city",              :default => "Muenchen"
+    t.string   "title"
   end
 
   create_table "messages", :force => true do |t|

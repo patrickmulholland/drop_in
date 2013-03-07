@@ -2,12 +2,15 @@ class Profile < ActiveRecord::Base
   attr_accessible :about_you, :birthday, :gender, :hometown, :image, :user_id, :hobbies, :profession, :avatar, :receive_mails
   belongs_to :user
   has_attached_file :avatar,
-  :storage => :dropbox,
-  :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
-  :styles => { :big => "150x150#", :medium => "80x80#", :thumb => "40x40#" },
-  :dropbox_options => {
-        :path => proc { |style| "#{style}/#{Rails.env}_#{id}_#{avatar.original_filename}" }
-      }
+  :styles => { :big => "150x150#", :medium => "80x80#", :thumb => "40x40#" }
+  
+  #Wenn wieder auf Dropbox umstellen, dann un-kommentieren und oben ein komma rein machen!!!:
+  
+  #:storage => :dropbox,
+  #:dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
+  #  :dropbox_options => {
+  #      :path => proc { |style| "#{style}/#{Rails.env}_#{id}_#{avatar.original_filename}" }
+  #    }
   
   
   #Validations:
