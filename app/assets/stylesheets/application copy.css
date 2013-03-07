@@ -41,17 +41,6 @@ a img {border: 0;}
       font-weight: normal;
       font-style: normal;
   }
-  
-  @font-face {
-      font-family: 'museo300';
-      src: url('MuseoSans_300-webfont.eot');
-      src: url('MuseoSans_300-webfont.eot?#iefix') format('embedded-opentype'),
-           url('MuseoSans_300-webfont.woff') format('woff'),
-           url('MuseoSans_300-webfont.ttf') format('truetype'),
-           url('MuseoSans_300-webfont.svg#museo_sans_500regular') format('svg');
-      font-weight: normal;
-      font-style: normal;
-  }
 
 .gigantic {
 	font-size: 110px;
@@ -123,33 +112,48 @@ body {-webkit-tap-highlight-color: rgb(255,255,158);}
 
 
 
-
-/* ------------ Grundgerüst: ------------ */
+/*		Default Layout: 992px. 
+		Gutters: 24px.
+		Outer margins: 48px.
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
 
 
 html, body {
-  font: 14px/24px "Museo300", Helvetica, Arial, sans-serif;
+	font: 14px/24px Helvetica, Arial, "MS Trebuchet", sans-serif;
 	color: #555;
-	background: #1C1D22;
+	background: #EEE;
 	height: 100%;
 	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
 }
 
-
-
-/* ------------ Blauer Header mit Logo und rechts Signin ------------ */
+body #bug {
+	position: absolute;
+	right: 18%; top: 0px;
+}
 
 body #header {
 	width: 100%;
-	height: 50px;
+	height: 44px;
 	overflow: auto;
-  color: #FFF;
-  background: #375E99;
-  
-  box-shadow: 0px 4px 20px #000;
-  -moz-box-shadow: 0px 4px 20px #000;
-  -webkit-box-shadow: 0px 4px 20px #000;
-  
+
+
+	color: #FFF;
+	font-size: 14px;
+	
+	/* Gradient Background: */
+	background: #474747; /* Old browsers */
+	background: -moz-linear-gradient(top, #474747 0%, #010101 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#474747), color-stop(100%,#010101)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #474747 0%,#010101 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #474747 0%,#010101 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #474747 0%,#010101 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #474747 0%,#010101 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474747', endColorstr='#010101',GradientType=0 ); /* IE6-9 */
+	
+
 }
 
 body #header #header_container {
@@ -158,19 +162,26 @@ body #header #header_container {
 	margin-right: 7.5%;
 }
 
+
 body #header #header_container a, a:visited, a:hover {
 	color: #FFF;
-	font-size: 14px;
+	font-size: 13px;
 	text-decoration: none;
+}
+
+body #header #header_container #logo {
+	
 }
 
 body #header #header_container #logo a{
 width: 100px;
 height: 30px;
-margin-top: 10px;
+margin-top: 6px;
 margin-left: 1%;
 float: left;
 }
+
+
 
 body #header #header_container #right_menu{
 	margin-top: 13px;
@@ -178,9 +189,6 @@ body #header #header_container #right_menu{
 	text-align: right;
 	float: right;
 }
-
-
-/* ------------ Notifications. Werden nur angezeigt wenn was bestimmtes passiert ------------ */
 
 body #info_field_en {
 	width: 100%;
@@ -212,349 +220,27 @@ body #profile_notification a, a:visited, a:hover{
 }
 
 
-/* ------------ Wrapper und Content-Wrapper: ------------ */
-
 body #wrapper {
-  overflow: auto;
-  padding-bottom: 40px;
-}
-
-body #wrapper #content {
-  width: 85%;
+	width: 85%;
 	margin-left: 7.5%;
 	margin-right: 7.5%;
+	/*
+	height: auto !important;
+	height: 100%;
+	min-height: 100%; */
+}
+
+
+
+body #wrapper #content {
+	
 	padding-top: 30px;
-  
+	overflow: auto;
+	width: 100%;
+	padding-bottom: 80px;
+
+	
 }
-
-/* ------------- Events by Date ------------- */
-
-.events_container {
-  overflow: auto;
-  background: #FFF;
-  box-shadow: 0px 4px 20px #000;
-  moz-box-shadow: 0px 4px 20px #000;
-  webkit-box-shadow: 0px 4px 20px #000;
-  
-  
-}
-
-.events_container .header{
-  width: 100%;
-  background: #375E99;
-  overflow: auto;
-}
-
-.events_container .header p{
-  font-size: 18px;
-  padding: 10px 15px 10px 15px;
-  color: #FFF;
-  display: inline-block;
-  background: #26416C;
-  float: left;
-}
-
-.events_container .header p b.grey{
-  font-weight: normal;
-  color: #CCC;
-}
-
-.events_container .header .arrow{
-border-top: 22px solid transparent;
-	border-bottom: 22px solid transparent;
-	border-left: 14px solid #26416C;
-  float: left;
-}
-
-
-.events_container .content{
-  width: 100%;
-  display: table;
-}
-
-.events_container .content .left {
-  display: table-cell;
-  width: 100px;
-  
-}
-
-.events_container .content .left img{
-  max-width: 100%;
-  display: block;
-}
-
-.events_container .content .right {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 10px 10px 10px 15px;
-  line-height: 18px;
-}
-
-.events_container .content .right p.head{
-  color: #26416C;
-  padding-bottom: 5px;
-}
-
-.events_container .content .right p.head b.grey{
-  font-weight: normal;
-  color: #999;
-}
-
-
-.events_container .content .right p.description{
-}
-
-.events_container .footer{
-  width: 100%;
-  background: #F4F4F4;
-  overflow: auto;
-}
-
-.events_container .footer b.replies{
-  font-family: "Museo500", Helvetica, Arial, sans-serif;
-  padding: 5px 8px 3px 22px;
-  margin-left: 10px;
-  display: inline-block;
-	background: url("/assets/replies.png") left center no-repeat;
-  
-}
-
-.events_container .footer b.commits{
-  font-family: "Museo500", Helvetica, Arial, sans-serif;
-  padding: 5px 8px 3px 22px;
-  margin-left: 6px;
-  display: inline-block;
-	background: url("/assets/commits.png") left center no-repeat;
-  
-}
-
-.events_container .footer .right{
-  float: right;
-  text-align: right;
-}
-
-.events_container .footer .right a, a:visited, a:hover{
-  font-size: 14px;
-  text-decoration: none;
-  color: #FFF;
-  padding: 4px 15px;
-  background: #AAA;
-  display: inline-block;
-  width: auto;
-}
-
-/* ------------- User Overview: ------------- */
-
-.user_overview_container {
-  width: 100%;
-  overflow: auto;
-}
-
-.user_overview_container .horizontal_ruler {
-  width: 100%;
-  background: red;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #333;  
-}
-
-/* ------------- User Overview (Profil): ------------- */
-
-.user_overview_container .short_profile{
-  display: table;
-  width: 100%;
-  overflow: auto;
-  line-height: 18px;
-  margin-bottom: 15px;
-  margin-top: 44px;
-}
-
-.user_overview_container .short_profile .left {
-  display: table-cell;
-  width: 70px;
-  background: purple;
-}
-
-.user_overview_container .short_profile .left img{
-  display: block;
-}
-
-.user_overview_container .short_profile .right{
-  display: table-cell;
-  vertical-align: bottom;
-  padding-left: 10px;
-  
-}
-
-.user_overview_container .short_profile .right .username a, a:visited, a:hover{
-  color: #888;
-  font-size: 18px;
-  text-decoration: none;
-}
-
-.user_overview_container .short_profile .right .signout a, a:visited, a:hover{
-  color: #FFF;
-  font-size: 12px;
-  text-decoration: none;
-}
-
-/* ------------- User Overview (Events): ------------- */
-
-.user_overview_container .events_overview{
-  margin-top: 40px;
-  width: 100%;
-  overflow: auto;
-  margin-bottom: 40px;
-}
-
-.user_overview_container .events_overview .head {
-  margin-bottom: 15px;
-}
-
-.user_overview_container .events_overview .head a, a:visited, a:hover{
-  color: #FFF;
-  width: 100%;
-  font-size: 20px;
-  text-decoration: none;  
-}
-
-.user_overview_container .events_overview .head b.grey{
-  font-family: "Museo300", Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  font-weight: normal;
-  color: #888;
-  
-}
-
-.user_overview_container .events_overview .head b.grey a, a:visited, a:hover{
-  text-decoration: none;
-  color: #888;
-}
-
-
-.user_overview_container .events_overview .element{
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.user_overview_container .events_overview .element a.orange{
-  font-family: "Museo500", Helvetica, Arial, sans-serif;
-  text-decoration: none;
-  font-weight: normal;
-  font-size: 15px;
-  color: #FFF;
-  
-  background: #E53207;
-  padding: 4px 7px;
-  
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
-.user_overview_container .events_overview .element a.regular{
-  text-decoration: none;
-  font-weight: normal;
-  font-size: 15px;
-  color: #888;
-  margin-left: 3px;
-}
-
-/* ------------- User Overview (Replies): ------------- */
-
-.user_overview_container .replies_overview{
-  width: 100%;
-  overflow: auto;
-  margin-bottom: 30px;
-}
-
-.user_overview_container .replies_overview .head {
-  margin-bottom: 15px;
-}
-
-.user_overview_container .replies_overview .head a, a:visited, a:hover{
-  color: #FFF;
-  width: 100%;
-  font-size: 20px;
-  text-decoration: none;  
-}
-
-.user_overview_container .replies_overview .head b.grey{
-  font-family: "Museo300", Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  font-weight: normal;
-  color: #888;
-}
-
-.user_overview_container .replies_overview .head b.grey a, a:visited, a:hover{
-  text-decoration: none;
-  color: #888;
-}
-
-.user_overview_container .replies_overview .element{
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.user_overview_container .replies_overview .element a.orange{
-  font-family: "Museo500", Helvetica, Arial, sans-serif;
-  text-decoration: none;
-  font-weight: normal;
-  font-size: 15px;
-  color: #FFF;
-  
-  background: #E53207;
-  padding: 4px 7px;
-  
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
-.user_overview_container .replies_overview .element a.regular{
-  text-decoration: none;
-  font-weight: normal;
-  font-size: 15px;
-  color: #888;
-  margin-left: 3px;
-}
-
-/* ------------- User Overview (Events Today): ------------- */
-
-
-.user_overview_container .today_overview {
-  margin-top: 40px;
-  width: 100%;
-  overflow: auto;
-}
-
-.user_overview_container .today_overview .head {
-  color: #FFF;
-  width: 100%;
-  font-size: 20px;
-  text-decoration: none;  
-  margin-bottom: 15px;
-}
-
-.user_overview_container .today_overview .time {
-  font-size: 15px;
-  color: #888;
-}
-
-.user_overview_container .today_overview .title {
-  font-size: 15px;
-  color: #888;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 body #wrapper #content #error_explanation{
@@ -580,6 +266,24 @@ body #wrapper #content #error_explanation ul{
 	padding-bottom: 10px;
 }
 
+/*
+
+body #wrapper #content .form_error_container{
+	background: #FFF;
+	width: 93.5%;
+	padding: 15px 3% 0 3%;
+	border:1px solid #DDD;	
+
+    box-shadow: 0px 5px 4px -4px #666;
+	color: red;
+	margin-bottom: 25px;
+}
+
+body #wrapper #content .form_error_container p{
+	padding-bottom: 15px;
+}
+
+*/
 
 
 body #wrapper #content .informer{
@@ -1845,12 +1549,11 @@ color: red;
 body #footer {
 	font-size: 12px;
 	line-height: 16px;
-	color: #FFF;
-    background: #000;
+	color: #CCC;
+    background: #222;
     width:100%;
 	overflow: auto;
-	height: 34px;
-  border-top: 1px solid #333;
+	height: 29px;
 }
 
 body #footer a, a:visited, a:hover{
@@ -1870,13 +1573,13 @@ body #footer #footer_container {
 
 body #footer #footer_container #footer_left {
 
-	margin-top: 9px;
+	margin-top: 6px;
 	width: 40%;
 	float: left;
 }
 
 body #footer #footer_container #footer_right {
-	margin-top: 9px;
+	margin-top: 6px;
 	text-align: right;
 	width: 60%;
 	float: right;

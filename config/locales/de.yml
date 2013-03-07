@@ -60,7 +60,11 @@ de:
     next_label: "Nächste &#8594;"
     
 #Allgemein:
-
+  oclock: "Uhr"
+  
+  signout: "Abmelden"
+  at: "um"
+  at_big: "Um"
   wrote: "schrieb"
   reply: "Anfragen"
   submit: "Abschicken"
@@ -194,7 +198,6 @@ de:
   layouts:
     application:
       title: "Drop.in - Lerne neue Leute kennen"
-      signout: "Ausloggen"
       signin: "Einloggen"
       imprint: "Impressum"
       help: "Hilfe"
@@ -203,7 +206,8 @@ de:
   static_pages:
     by_date:
       title: "Alle Events nach Datum:"
-      events_today: "Events heute:"
+      events_today_first: "Events"
+      events_today_second: " heute:"
       replies: "Anfragen"
       commits: "Zusagen"
 
@@ -216,21 +220,21 @@ de:
       your_replies: "Deine Anfragen"
       your_profile: "Dein Profil"
       new_replies:
-        one: "1 neue Antwort"
-        other: "%{count} neue Antworten"
+        one: "neue Antwort"
+        other: "neue Antworten"
       new_commits:
-        one: "1 neue Zusage"
-        other: "%{count} neue Zusagen"
+        one: "neue Zusage"
+        other: "neue Zusagen"
       new_comments:
-        one: "1 neuer Kommentar"
-        other: "%{count} neue Kommentare"
+        one: "neuer Kommentar"
+        other: "neue Kommentare"
       new_invitations:
-        one: "1 neue Einladung"
-        other: "%{count} neue Einladungen"
+        one: "neue Einladung"
+        other: "neue Einladungen"
       new_ratings:
         one: "1 neues Rating"
         other: "%{count} neue Ratings"
-      todays_events: "Deine Events heute:"
+      todays_events: "Heute:"
       
   replies:
     new:

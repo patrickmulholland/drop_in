@@ -1,0 +1,74 @@
+
+<% date_counter = 0 %>
+
+<% content_for :no_container do %>
+
+<% provide(:title, t(".title")) %>
+
+
+	<% if @events.count == 0 %>
+		
+	<div class="how_to_container_replies">
+	
+		<%= render :partial => "translations" %>
+		<%= yield :no_events_at_all %>
+	
+	</div>
+	
+	<% else %>
+
+<% @events.order("created_at DESC").each do |event| %>
+
+<% if event.date != date_counter %>
+
+
+<div class="head_container"><div class="full">
+<% if event.date.today? %>
+	<p><%= t(".events_today")%></p></div></div>
+<% else %>
+	<p><%= l event.date, :format => "%A, %d.%m" %>:</p></div></div>
+<% end%>
+<% end %>
+
+
+
+<div class="general_container">
+	
+<div class="header"><p><%= link_to event.user.name, event.user %>:</p></div>
+	
+	<div class="content">
+		<div class="left">
+	<% if event.user.profile %>
+	<p><%= link_to image_tag(event.user.profile.avatar.url(:thumb)), event.user %></p>
+	<% else %>
+	<p><%= image_tag "/avatars/thumb/missing.png"%></p>
+	<% end %>
+</div>
+<div class="right">
+	<p><%= event.short_description %></p>
+	
+</div>
+</div>
+		
+<div class="footer">
+		
+	<div class="left"><p><b class="replies" title=<%= t(".replies")%> rel="tooltip"><%= event.replies.count %></b><b class="commits" title=<%= t(".commits")%> rel="tooltip"><%= event.replies.where(:commit => true).count %></b></p></div>
+		
+	<div class="right"><p>
+		<%= link_to t(:reply), new_reply_path(:id => event) if user_signed_in? && user_is_not_current_user?(event) && !@your_replies.find_by_event_id(event.id) %></p></div>
+		
+</div>
+
+<% date_counter = event.date %>
+
+
+</div><!-- end post_container -->
+<% end %>
+
+
+<%= will_paginate(@events) %>
+
+<% end %>
+
+<% end %>
+

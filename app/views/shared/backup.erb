@@ -1,0 +1,104 @@
+<div class ="general_container">
+
+	<% if user_signed_in? %>
+
+<div class="menu_header">
+
+	<p><b><%= t(:welcome)%></b> <%= current_user.name %> </p>
+
+</div>
+
+<div class="menu_content">
+	
+	<% if current_user.profile %>
+	<%= image_tag current_user.profile.avatar.url(:medium) %>
+	<% else %>
+	<%= image_tag "/avatars/medium/missing.png" %>
+	<% end %>
+
+
+
+	<div class="menu">
+		<div class="item"><%= link_to t(".your_events"), events_path %>
+
+	
+			<% if count_new_replies_for_events(current_user.events) > 0 %>
+		<div class="counter"><%= t(".new_replies", count: count_new_replies_for_events(current_user.events)) %></div><% end %>
+	
+		<% if count_new_commits_for_events(current_user.events) > 0 && count_new_replies_for_events(current_user.events) > 0 %>
+	<br><div class="counter"><%= t(".new_commits", count: count_new_commits_for_events(current_user.events)) %></div>
+	<% elsif count_new_commits_for_events(current_user.events) > 0 %>
+	<div class="counter"><%= t(".new_commits", count: count_new_commits_for_events(current_user.events)) %></div>
+	<% end %>
+	
+	<% if count_new_comments_for_events(current_user.events) > 0 %>
+	<div class="counter"><%= t(".new_comments", count: count_new_comments_for_events(current_user.events)) %></div>
+	<% end %>
+	
+	
+	</div>
+
+	<div class="item_odd"><%= link_to t(".your_replies"), replies_path %>
+	
+		<% if count_new_invitations > 0 %>
+	<div class="counter"><%= t(".new_invitations", count: count_new_invitations) %></div>
+	<% end %>	
+	
+	
+	</div>
+	<div class="item"><%= link_to t(".your_profile"), current_user %>
+	
+		<% if count_new_ratings > 0 %>
+	<div class="counter"><%= t(".new_ratings", count: count_new_ratings) %></div>
+	<% end %>
+	</div>
+	</div>
+
+
+
+
+
+	</div> <!-- end content-->
+
+
+
+
+<% else %> <!-- ###################if not logged in################### -->
+
+<%= render :partial => "signup"%>
+
+<% end %>
+
+
+</div>
+
+<% if upcoming_events_for_current_user.count > 0 %>
+
+<div class ="general_container">
+	
+	<div class="upcoming_header">
+		<p>t(".todays_events")</p>
+	</div>
+	<div class="upcoming_content">
+		
+		<% upcoming_events_for_current_user.each do |reply| %>
+		<div class="<%= cycle('content_even', 'content_odd') %>">
+		<p><%= reply.event.time.strftime("At %I:%M o'clock:") %></br>
+		<%= reply.event.short_description %></p>
+		</div>
+		<% end %>
+		
+	</div>
+	
+</div>
+
+<% end %>
+
+
+
+
+
+
+
+
+

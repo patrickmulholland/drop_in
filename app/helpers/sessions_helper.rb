@@ -112,8 +112,16 @@ module SessionsHelper
     Event.where(:id => rating_event_id).first
   end
   
+  def count_users_events
+    Event.where("user_id = ? AND date >= ?", current_user, Date.today).count
+  end
+  
+  def count_users_replies
+    Reply.where(:user_id => current_user).joins(:event).where("date >= ?", Date.today).count
+  end
+  
+  
 end
-
 
 
 

@@ -9,12 +9,7 @@
   <%= stylesheet_link_tag "http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" %>
 
 
-
   <%= javascript_include_tag "application" %>
-
-
-
-
 
 
   <%= csrf_meta_tags %>
@@ -23,9 +18,7 @@
 </head>
 <body>
 	
-	<div id="bug"><%= link_to image_tag('/assets/bug.png'), contact_path %></div>
-	
-	
+		
 	<div id="header">
 		<div id="header_container">
 			
@@ -37,7 +30,7 @@
 	<% if user_signed_in? %>
 		
 		
-		<%= link_to t(".signout"), destroy_user_session_path, :method => :delete %>
+		<%= link_to t(:signout), destroy_user_session_path, :method => :delete %>
 	<% else %>
 		<%= link_to t(".signin"), new_user_session_path %>
 	<% end %>
